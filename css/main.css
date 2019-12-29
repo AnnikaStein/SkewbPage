@@ -87,8 +87,8 @@ table {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.topnav.sticky + article {
-  padding-top: 60px;
+.topnav.sticky + header {
+  padding-top: 48px;
 }
 
 .topnav a, .topnav.sticky a {
@@ -116,7 +116,7 @@ table {
 }
 
 .dropdown .dropbtn {
-  font-size: 17px;    
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
@@ -214,7 +214,7 @@ table {
 	.resp {
 			display: block;
 			width: 100%;
-			
+
     }
 	.resp + .resp {
 				margin-top: 0.5rem;
