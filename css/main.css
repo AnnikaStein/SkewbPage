@@ -30,7 +30,6 @@ article {
 	width: 15%;
 	z-index: -1;
 	padding-top: 0;
-	//padding-bottom: 12em;
 	}
 #right {
 	/*//overflow: hidden;
@@ -41,13 +40,11 @@ article {
 	z-index: -1;
 	padding-top: 0;
 	position: top;
-	//padding-bottom: 12em;
 	}
 
 section {
 	margin: auto;
 	width: 60%;
-	//padding-bottom: 12em;
 	}
 #wrap {
 	height: auto;
@@ -58,8 +55,8 @@ footer {
 	padding: 1em;
 	display: block;
 	height: 10em;
-    text-align: center;
-    background: #ddd;
+  text-align: center;
+  background: #ddd;
 }
 table {
     display: block;
@@ -67,7 +64,7 @@ table {
     overflow: auto;
     word-break: normal;
     word-break: keep-all; // For Firefox to horizontally scroll wider tables.
-	white-space: nowrap;
+	  white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 	text-align: left;
   }
@@ -95,7 +92,6 @@ table {
   width: 100%;
 }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .topnav.sticky + header {
   padding-top: 48px;
 }
@@ -169,9 +165,11 @@ table {
 }
 .resp2 {
     display: block;
-	visibility: visible;
-	width: 100%;
-	margin-top: 0.5rem;
+	  visibility: visible;
+	  width: 100%;
+}
+.resp2 + .resp2 {
+	  margin-top: 0.5rem;
 }
 .resp {
     display: inline-block;

@@ -123,6 +123,7 @@
           <button type="button" onclick="incrMoves()"> + </button>
         </th>
       </tr>
+      <br><br>
       <tr>
         <th><input type="checkbox" id="showscrimageFLT">&nbsp;Show Scramble Image (from next scramble on)</th>
       </tr>
@@ -136,6 +137,7 @@
 			<br>
 			<button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs by Category</button>
 			<button type="button" class="resp" onclick="toggleSelectAlgsbyID()">Select Algs by Case ID</button>
+      <br><br>
       <tr>
 				<th><input type="checkbox" id="showscrimageAlg">&nbsp;Show Scramble Image (from next scramble on)</th>
 			</tr>
@@ -149,35 +151,9 @@
 			First Layer Trainer
 		-->
 		<div id="FLT" style="display: none">
-			<!--<tr>
-				<th>
-					<input type="checkbox" id="shufflescrchecker" onclick="changescrlen()"> Shuffle scrambles
-				</th>
-			</tr>
-			<br>
-			<tr>
-				<th>
-					<input type="checkbox" id="anycolourchecker"> Use all colours
-				</th>
-			</tr>
-			<br><br>
-			<tr>
-				<th>
-					<button type="button" onclick="decrMoves()"> - </button>
-				</th>
-				<th>
-					<label id="scrlenlabel"> 1 </label></th>
-				<th>
-					<button type="button" onclick="incrMoves()"> + </button>
-				</th>
-			</tr>
-			<tr>
-				<th><input type="checkbox" id="showscrimageFLT">&nbsp;Show Scramble Image (from next scramble on)</th>
-			</tr>
-			<br><br>-->
-			<canvas id="scrDrawing" width="500" height="450" style="display:none"></canvas><br><br>
-			<button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
-			<label class="resp" id="colourlabel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
+      <canvas id="scrDrawing" width="500" height="450" style="display:none"></canvas><br><br>
+			<label class="resp" id="colourlabel" style="border: 3px solid black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 			<label class="resp" id="scramblelabel">&nbsp;</label>
 		</div>
 
@@ -425,9 +401,9 @@
 					<th><input type="checkbox" id="37a" name="btngroup" onclick="changescrlenAlg()">&nbsp;37a</th>
 					<th><input type="checkbox" id="37b" name="btngroup" onclick="changescrlenAlg()">&nbsp;37b</th>
 				</tr>
-			</table><br>
-			<canvas id="scrDrawingAlg" width="500" height="450" style="display:none"></canvas><br><br>
+			</table>
 			<button type="button" class="resp" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
+			<canvas id="scrDrawingAlg" width="500" height="450" style="display:none"></canvas><br><br>
 			<label class="resp" id="scramblelabelAlg">&nbsp;</label>
 		</div>
 		<div id="timing" style="display: none;">
