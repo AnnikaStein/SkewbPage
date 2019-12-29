@@ -81,7 +81,7 @@ table {
 
 .topnav {
   background-color: #333;
-  min-height: 48px;
+  min-height: 3rem;
   padding: 0;
   z-index: 1;
 }
@@ -93,7 +93,7 @@ table {
 }
 
 .topnav.sticky + header {
-  padding-top: 48px;
+  padding-top: 3rem;
 }
 
 .topnav a, .topnav.sticky a {
@@ -101,9 +101,9 @@ table {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1rem 1rem;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .active {
@@ -121,11 +121,11 @@ table {
 }
 
 .dropdown .dropbtn {
-  font-size: 17px;
+  font-size: 1rem;
   border: none;
   outline: none;
   color: white;
-  padding: 14px 16px;
+  padding: 1rem 1rem;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -135,15 +135,15 @@ table {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 10rem;
+  box-shadow: 0rem 0.5rem 1rem 0rem rgba(0,0,0,0.2);
   z-index: 2;
 }
 
 .topnav .dropdown-content a, .topnav.sticky .dropdown-content a, #myTopnav .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 1rem 1rem;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -267,7 +267,7 @@ aside .resp + .resp {
 	  position: relative;
 	  }
   #myTopnav .dropdown {
-	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  box-shadow: 0rem 0.5rem 1rem 0rem rgba(0,0,0,0.2);
   }
   .topnav.responsive .dropdown .dropbtn {
     display: block;
