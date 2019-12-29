@@ -1,9 +1,15 @@
 html, body {
 	margin:0;
 	font-family:Helvetica;
-	height: 100%;}
+	height: 100%;
+	overscroll-behavior: none;
+}
 
-header {overflow: hidden; padding: 0;}
+header {
+	  overflow: hidden;
+		padding: 0;
+		width: 100%;
+}
 
 header img {
 	width: 100%;
@@ -24,6 +30,7 @@ article {
 	width: 15%;
 	z-index: -1;
 	padding-top: 0;
+	//padding-bottom: 12em;
 	}
 #right {
 	/*//overflow: hidden;
@@ -34,11 +41,13 @@ article {
 	z-index: -1;
 	padding-top: 0;
 	position: top;
+	//padding-bottom: 12em;
 	}
 
 section {
 	margin: auto;
 	width: 60%;
+	//padding-bottom: 12em;
 	}
 #wrap {
 	height: auto;
@@ -184,7 +193,15 @@ table {
 #mainHeader922, #mainHeader2560 {
 	display: none;
 }
+aside .resp {
+		display: block;
+		width: 100%;
 
+	}
+aside .resp + .resp {
+			margin-top: 0.5rem;
+			margin-left: 0;
+}
 @media screen and (min-width: 577px) {
 	#mainHeader922 {
 		display: block;

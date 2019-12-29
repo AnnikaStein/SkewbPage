@@ -2,27 +2,49 @@
 function toggleFLT() {
   var x = document.getElementById("FLT");
   var y = document.getElementById("AlgT");
+  var xx = document.getElementById("additionalFLT");
+  var yy = document.getElementById("additionalAlgT");
   var z = document.getElementById("timing");
+  var d = document.getElementById("skskDEFAULT");
   if (x.style.display === "none") {
-	z.style.display = "block";
+	  z.style.display = "block";
     x.style.display = "block";
     y.style.display = "none";
+    xx.style.display = "block";
+    yy.style.display = "none";
+    d.style.display = "none";
+    document.getElementById("toggleFLTbut").style.color = "green";
+    document.getElementById("toggleAlgTbut").style.color = "black";
   } else {
     z.style.display = "none";
-	x.style.display = "none";
+	  x.style.display = "none";
+    xx.style.display = "none";
+    d.style.display = "block";
+    document.getElementById("toggleFLTbut").style.color = "black";
   }
 }
 function toggleAlgT() {
   var x = document.getElementById("AlgT");
   var y = document.getElementById("FLT");
+  var xx = document.getElementById("additionalAlgT");
+  var yy = document.getElementById("additionalFLT");
   var z = document.getElementById("timing");
+  var d = document.getElementById("skskDEFAULT");
   if (x.style.display === "none") {
-	z.style.display = "block";
+	  z.style.display = "block";
     x.style.display = "block";
     y.style.display = "none";
+    xx.style.display = "block";
+    yy.style.display = "none";
+    d.style.display = "none";
+    document.getElementById("toggleFLTbut").style.color = "black";
+    document.getElementById("toggleAlgTbut").style.color = "green";
   } else {
-	z.style.display = "none";
+	  z.style.display = "none";
     x.style.display = "none";
+    xx.style.display = "none";
+    d.style.display = "block";
+    document.getElementById("toggleAlgTbut").style.color = "black";
   }
 }
 
