@@ -20,7 +20,7 @@ article {
 	margin: auto;
 	width: 90%;
 	line-height: 1.5em;
-	padding-bottom: 12em;
+	padding-bottom: 12rem;
 	}
 #left {
 	/*//overflow: hidden;
@@ -51,10 +51,10 @@ section {
 	min-height:100%;
 }
 footer {
-	margin-top: -12em;
-	padding: 1em;
+	margin-top: -12rem;
+	padding: 1rem;
 	display: block;
-	height: 10em;
+	height: 10rem;
   text-align: center;
   background: #ddd;
 }
