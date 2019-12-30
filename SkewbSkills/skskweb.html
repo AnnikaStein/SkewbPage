@@ -114,12 +114,12 @@
       <br><br>
       <tr>
         <th>
-          <button type="button" onclick="decrMoves()"> - </button>
+          <button type="button" onclick="decrMoves()" style="width: 2rem;"> - </button>
         </th>
         <th>
           <label id="scrlenlabel"> 1 </label></th>
         <th>
-          <button type="button" onclick="incrMoves()"> + </button>
+          <button type="button" onclick="incrMoves()" style="width: 2rem;"> + </button>
         </th>
       </tr>
       <br><br>
@@ -134,8 +134,8 @@
 			<button type="button" class="resp" id="togglePeanut" onclick="whattodowithu()">Toggle Peanut</button>
 			<button type="button" class="resp" id="toggleL" onclick="whattodowithl()">Toggle L4C / L5C</button>
 			<br>
-			<button type="button" class="resp" onclick="toggleSelectAlgs()">Select Algs by Category</button>
-			<button type="button" class="resp" onclick="toggleSelectAlgsbyID()">Select Algs by Case ID</button>
+			<button type="button" class="resp" onclick="toggleSelectAlgs()" id="selAlgCat">Select Algs by Category</button>
+			<button type="button" class="resp" onclick="toggleSelectAlgsbyID()" id="selAlgID">Select Algs by Case ID</button>
       <br><br>
       <tr>
 				<th><input type="checkbox" id="showscrimageAlg">&nbsp;Show Scramble Image (from next scramble on)</th>

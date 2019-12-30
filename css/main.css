@@ -26,7 +26,6 @@ article {
 	/*//overflow: hidden;
 	position: fixed;*/
 	float: left;
-	/*display: block-inline;*/
 	width: 15%;
 	z-index: -1;
 	padding-top: 0;
@@ -35,11 +34,11 @@ article {
 	/*//overflow: hidden;
 	position: fixed;*/
 	float: right;
-	/*display: block-inline;*/
 	width: 15%;
 	z-index: -1;
 	padding-top: 0;
 	position: top;
+	line-height: 1rem:
 	}
 
 section {
@@ -51,6 +50,7 @@ section {
 	min-height:100%;
 }
 footer {
+	clear: both;
 	margin-top: -12rem;
 	padding: 1rem;
 	display: block;

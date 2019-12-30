@@ -51,21 +51,31 @@ function toggleAlgT() {
 // show or hide all alg sets available
 function toggleSelectAlgs() {
   var x = document.getElementById("selectAlgs");
+  var xx = document.getElementById("selAlgCat");
+  var yy = document.getElementById("selAlgID");
   if (x.style.display === "none") {
     x.style.display = "block";
+    xx.style.color = "green";
+    yy.style.color = "black";
     document.getElementById("selectAlgsbyID").style.display = "none";
   } else {
     x.style.display = "none";
+    xx.style.color = "black";
   }
 }
 // show or hide all alg sets available
 function toggleSelectAlgsbyID() {
   var x = document.getElementById("selectAlgsbyID");
+  var yy = document.getElementById("selAlgCat");
+  var xx = document.getElementById("selAlgID");
   if (x.style.display === "none") {
     x.style.display = "block";
+    xx.style.color = "green";
+    yy.style.color = "black";
     document.getElementById("selectAlgs").style.display = "none";
   } else {
     x.style.display = "none";
+    xx.style.color = "black";
   }
 }
 
