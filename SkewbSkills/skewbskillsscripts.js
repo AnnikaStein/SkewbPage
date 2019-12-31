@@ -760,6 +760,40 @@ function transftoWCA(scr){
 
 }
 
+function doubleMoveRemover(scramble) {
+  var newScr = [];
+  var newScrString = "";
+  var scrSplit = [];
+  scrSplit = (scramble.split(" ")).slice(0,-1);
+
+  for (var i = 0; i < scrSplit.length; i++) {
+    if (newScr.length >= 1) {
+      if (newScr[newScr.length-1] == scrSplit[i]) {
+        if ((scrSplit[i]).length == 1) {
+          newScr.pop();
+          newScr.push(scrSplit[i] + "'");
+        } else {
+          newScr.pop();
+          newScr.push(scrSplit[i].charAt(0));
+        }
+      } else {
+        if (newScr[newScr.length-1].charAt(0) == scrSplit[i].charAt(0)) {
+          newScr.pop();
+        } else {
+          newScr.push(scrSplit[i]);
+        }
+      }
+    } else {
+      newScr.push(scrSplit[i]);
+    }
+  }
+  for (move of newScr) {
+    newScrString += move + " ";
+  }
+  return (newScrString);
+}
+
+
 // (de/in-)crement the number of moves for the first layer trainer scrambles
 function decrMoves() {
     var scrlen = parseInt(document.getElementById("scrlenlabel").innerHTML);
@@ -1102,7 +1136,7 @@ function ScramblePlusColourAlg() {
 
     var scramblezumanzeigenAlg = scramblelistAlg[scramblelistAlg.length - 1];
     scramblelistAlg.pop();
-    document.getElementById("scramblelabelAlg").innerHTML = transftoWCA(scramblezumanzeigenAlg);
+    document.getElementById("scramblelabelAlg").innerHTML = doubleMoveRemover(transftoWCA(scramblezumanzeigenAlg));
 
     if (showscrimageAlg.checked == true) {
         document.getElementById("scrDrawingAlg").style.display = "block";
