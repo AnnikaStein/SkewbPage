@@ -92,16 +92,25 @@
   <aside id="left">
 	  <h2 style="margin-top:0">Quick links:</h2>
 	  <p>
-	  <a href="skskweb.html">SkewbSkillsWeb</a>
-	  <a href="https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesv1.2.zip">Download .zip</a>
-	  <a href="https://github.com/AnnikaStein/SkewbSkills">View on Github</a>
+      <button type="button" class="resp2" onclick="location.href='skskweb.html';" >SkewbSkillsWeb</button>
+  		<button type="button" class="resp2" onclick="location.href='https://github.com/AnnikaStein/SkewbSkills/releases/download/v1.2/SkewbSkillsFilesv1.2.zip';" >Download .zip</button>
+  		<button type="button" class="resp2" onclick="location.href='https://github.com/AnnikaStein/SkewbPage';" >View on Github</button>
 	  </p>
 	  <h2>Newest Feature added:</h2>
 	  <p>21.12.19: Scrambles are now displayed in WCA notation in the Last 2 Layer Trainer!</p>
   </aside>
-  <aside id="right">Some text<br>more<br>even more</aside>
+  <aside id="right">
+    <h2 style="margin-top:0">More information:</h2>
+	  <p>
+    <button type="button" class="resp2" onclick="toggleWhatsnew()" id="toggleWhatsnewBUT">What's new?</button>
+    <button type="button" class="resp2" onclick="toggleDandinst()" id="toggleDandinstBUT">Download and Installation</button>
+    <button type="button" class="resp2" onclick="toggleUsage()" id="toggleUsageBUT">Usage</button>
+    <button type="button" class="resp2" onclick="toggleCredits()" id="toggleCreditsBUT">Credits</button>
+  </p>
+  </aside>
   <section>
-	<h2>Practice and learn skewb algs, first layer and more!</h2>
+<div id="general" style="display: block;">
+  <h2>Practice and learn skewb algs, first layer and more!</h2>
 
 	<p>This description intends to show you how to use SkewbSkills and give a quick
 	overview on the development process.</p>
@@ -119,7 +128,8 @@
 	<li>practice html, css and javascript!</li></ul></p>
 
 	<div style="text-align: center"><img src="../pics/logogreen.png" alt="SkewbSkills Logo" width="42%"></div>
-
+</div>
+  <div id="whatsnew" style="display: none;">
 	<h2>What's new?</h2>
 	<h3>As of 21.12.2019</h3>
 	<p>You can now use a nice feature of SkewbSkillsWeb (and also SkewbSkills .exe in the future):
@@ -235,7 +245,8 @@
 	</li>
 	<li>Make SkewbSkills available to more platforms than Windows (see paragraph
 	below for more information)</li></ul></p>
-
+</div>
+<div id="dandinst" style="display: none;">
 	<h2>Download and Installation (as webpage)</h2>
 	<p>You don't need to worry about downloading or installing anything, you can access
 	SkewbSkills now directly from the web, as a <a href="https://annikastein.github.io/SkewbSkills/SkewbSkillsWeb/skewbskillsweb.html">webbased application!</a></p>
@@ -295,7 +306,8 @@
 	scramble file you have overwritten with your own algs. In newer versions, the
 	files might be located in other folders, but they will be named the same way
 	as before.</p>
-
+</div>
+<div id="usage" style="display: none;">
 	<h2>Usage</h2>
 	<p>After opening SkewbSkills, type "H" or choose Help from the menubar to get
 	(almost) the same instructions as below. You can close every window inside
@@ -375,7 +387,8 @@
 	the scramble itself, ending with the last move. If you do not apply the steps
 	above, your program might crash (because it can only read and use the
 	scrambles provided in the form mentioned earlier).</p>
-
+</div>
+<div id="credits" style="display: none;">
 	<h2>Credits</h2>
 	<p>As I am just starting out Python (and PyQt5), I had a lot of input from
 	various online sources.</p>
@@ -392,7 +405,7 @@
 	the one to learn something through this project! :)</p>
 
 	<img src="../pics/Skewb.png" alt="Skewb" width="100%">
-
+</div>
 
   </section>
 
@@ -409,6 +422,7 @@
 </a>
 </footer>
 <script src="../js/script.js"></script>
+<script src="skewbskillsscripts.js"></script>
 
 </body>
 </html>

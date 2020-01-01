@@ -47,7 +47,94 @@ function toggleAlgT() {
     document.getElementById("toggleAlgTbut").style.color = "black";
   }
 }
-
+function toggleWhatsnew() {
+  var currentDIV = document.getElementById("whatsnew");
+  var currentBUT = document.getElementById("toggleWhatsnewBUT");
+  var chDIV = currentDIV.parentNode.children;
+  var chBUT = currentBUT.parentNode.children;
+  var i;
+  var j;
+  if (currentDIV.style.display === "none") {
+    for (i=0; i < chDIV.length; i++) {
+      chDIV[i].style.display = "none";
+    }
+    for (j=0; j < chBUT.length; j++) {
+      chBUT[j].style.color = "black";
+    }
+    currentDIV.style.display = "block";
+    currentBUT.style.color = "green";
+  } else {
+    currentDIV.style.display = "none";
+    currentBUT.style.color = "black";
+    document.getElementById("general").style.display = "block";
+  }
+}
+function toggleDandinst() {
+  var currentDIV = document.getElementById("dandinst");
+  var currentBUT = document.getElementById("toggleDandinstBUT");
+  var chDIV = currentDIV.parentNode.children;
+  var chBUT = currentBUT.parentNode.children;
+  var i;
+  var j;
+  if (currentDIV.style.display === "none") {
+    for (i=0; i < chDIV.length; i++) {
+      chDIV[i].style.display = "none";
+    }
+    for (j=0; j < chBUT.length; j++) {
+      chBUT[j].style.color = "black";
+    }
+    currentDIV.style.display = "block";
+    currentBUT.style.color = "green";
+  } else {
+    currentDIV.style.display = "none";
+    currentBUT.style.color = "black";
+    document.getElementById("general").style.display = "block";
+  }
+}
+function toggleUsage() {
+  var currentDIV = document.getElementById("usage");
+  var currentBUT = document.getElementById("toggleUsageBUT");
+  var chDIV = currentDIV.parentNode.children;
+  var chBUT = currentBUT.parentNode.children;
+  var i;
+  var j;
+  if (currentDIV.style.display === "none") {
+    for (i=0; i < chDIV.length; i++) {
+      chDIV[i].style.display = "none";
+    }
+    for (j=0; j < chBUT.length; j++) {
+      chBUT[j].style.color = "black";
+    }
+    currentDIV.style.display = "block";
+    currentBUT.style.color = "green";
+  } else {
+    currentDIV.style.display = "none";
+    currentBUT.style.color = "black";
+    document.getElementById("general").style.display = "block";
+  }
+}
+function toggleCredits() {
+  var currentDIV = document.getElementById("credits");
+  var currentBUT = document.getElementById("toggleCreditsBUT");
+  var chDIV = currentDIV.parentNode.children;
+  var chBUT = currentBUT.parentNode.children;
+  var i;
+  var j;
+  if (currentDIV.style.display === "none") {
+    for (i=0; i < chDIV.length; i++) {
+      chDIV[i].style.display = "none";
+    }
+    for (j=0; j < chBUT.length; j++) {
+      chBUT[j].style.color = "black";
+    }
+    currentDIV.style.display = "block";
+    currentBUT.style.color = "green";
+  } else {
+    currentDIV.style.display = "none";
+    currentBUT.style.color = "black";
+    document.getElementById("general").style.display = "block";
+  }
+}
 // show or hide all alg sets available
 function toggleSelectAlgs() {
   var x = document.getElementById("selectAlgs");
