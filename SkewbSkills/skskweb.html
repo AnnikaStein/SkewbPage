@@ -96,7 +96,8 @@
   <aside id="left">
   <!--Buttons-->
 		<button type="button" class="resp2" onclick="toggleFLT()" id="toggleFLTbut">First Layer Trainer</button>
-		<button type="button" class="resp2" onclick="toggleAlgT()" id="toggleAlgTbut">L2L Alg Trainer</button><br>
+		<button type="button" class="resp2" onclick="toggleAlgT()" id="toggleAlgTbut">L2L Alg Trainer</button>
+    <button type="button" class="resp2" onclick="toggleOLT()" id="toggleOLTbut">One-Looking Trainer</button><br>
   </aside>
   <aside id="right">
     <div id="additionalFLT" style="display: none;">
@@ -140,6 +141,34 @@
       <tr>
 				<th><input type="checkbox" id="showscrimageAlg">&nbsp;Show Scramble Image (from next scramble on)</th>
 			</tr>
+    </div>
+    <div id="additionalOLT" style="display: none;">
+      <!--<tr>
+        <th>
+          <input type="checkbox" id="shufflescrchecker" onclick="changescrlen()"> Shuffle scrambles
+        </th>
+      </tr>
+      <br>
+      <tr>
+        <th>
+          <input type="checkbox" id="anycolourchecker"> Use all colours
+        </th>
+      </tr>
+      <br><br>-->
+      <tr>
+        <th>
+          <button type="button" onclick="decrMovesOL()" style="width: 2rem;"> - </button>
+        </th>
+        <th>
+          <label id="scrlenlabelOL"> 1 </label></th>
+        <th>
+          <button type="button" onclick="incrMovesOL()" style="width: 2rem;"> + </button>
+        </th>
+      </tr>
+      <br><br>
+      <tr>
+        <th><input type="checkbox" id="showscrimageOLT">&nbsp;Show Scramble Image (from next scramble on)</th>
+      </tr>
     </div>
   </aside>
   <section>
@@ -407,6 +436,15 @@
 			<button type="button" class="resp" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
 			<canvas id="scrDrawingAlg" width="500" height="450" style="display:none"></canvas><br><br>
 			<label class="resp" id="scramblelabelAlg">&nbsp;</label>
+		</div>
+      <!--
+                                One-Looking Trainer
+                                                                    -->
+    <div id="OLT" style="display: none">
+      WORK IN PROGRESS
+      <!--<button type="button" class="resp" onclick="ScramblePlusColourOL()">Generate Scramble</button>
+      <canvas id="scrDrawingOL" width="500" height="450" style="display:none"></canvas><br><br>
+			<label class="resp" id="scramblelabelOL">&nbsp;</label>-->
 		</div>
 		<div id="timing" style="display: none;">
 			<h1>

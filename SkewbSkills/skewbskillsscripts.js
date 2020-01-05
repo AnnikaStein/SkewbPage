@@ -2,19 +2,24 @@
 function toggleFLT() {
   var x = document.getElementById("FLT");
   var y = document.getElementById("AlgT");
+  var y2 = document.getElementById("OLT");
   var xx = document.getElementById("additionalFLT");
   var yy = document.getElementById("additionalAlgT");
+  var yy2 = document.getElementById("additionalOLT");
   var z = document.getElementById("timing");
   var d = document.getElementById("skskDEFAULT");
   if (x.style.display === "none") {
 	  z.style.display = "block";
     x.style.display = "block";
     y.style.display = "none";
+    y2.style.display = "none";
     xx.style.display = "block";
     yy.style.display = "none";
+    yy2.style.display = "none";
     d.style.display = "none";
     document.getElementById("toggleFLTbut").style.color = "green";
     document.getElementById("toggleAlgTbut").style.color = "black";
+    document.getElementById("toggleOLTbut").style.color = "black";
   } else {
     z.style.display = "none";
 	  x.style.display = "none";
@@ -26,19 +31,24 @@ function toggleFLT() {
 function toggleAlgT() {
   var x = document.getElementById("AlgT");
   var y = document.getElementById("FLT");
+  var y2 = document.getElementById("OLT");
   var xx = document.getElementById("additionalAlgT");
   var yy = document.getElementById("additionalFLT");
+  var yy2 = document.getElementById("additionalOLT");
   var z = document.getElementById("timing");
   var d = document.getElementById("skskDEFAULT");
   if (x.style.display === "none") {
 	  z.style.display = "block";
     x.style.display = "block";
     y.style.display = "none";
+    y2.style.display = "none";
     xx.style.display = "block";
     yy.style.display = "none";
+    yy2.style.display = "none";
     d.style.display = "none";
     document.getElementById("toggleFLTbut").style.color = "black";
     document.getElementById("toggleAlgTbut").style.color = "green";
+    document.getElementById("toggleOLTbut").style.color = "black";
   } else {
 	  z.style.display = "none";
     x.style.display = "none";
@@ -47,92 +57,33 @@ function toggleAlgT() {
     document.getElementById("toggleAlgTbut").style.color = "black";
   }
 }
-function toggleWhatsnew() {
-  var currentDIV = document.getElementById("whatsnew");
-  var currentBUT = document.getElementById("toggleWhatsnewBUT");
-  var chDIV = currentDIV.parentNode.children;
-  var chBUT = currentBUT.parentNode.children;
-  var i;
-  var j;
-  if (currentDIV.style.display === "none") {
-    for (i=0; i < chDIV.length; i++) {
-      chDIV[i].style.display = "none";
-    }
-    for (j=0; j < chBUT.length; j++) {
-      chBUT[j].style.color = "black";
-    }
-    currentDIV.style.display = "block";
-    currentBUT.style.color = "green";
+function toggleOLT() {
+  var x = document.getElementById("OLT");
+  var y = document.getElementById("FLT");
+  var y2 = document.getElementById("AlgT");
+  var xx = document.getElementById("additionalOLT");
+  var yy = document.getElementById("additionalAlgT");
+  var yy2 = document.getElementById("additionalFLT");
+  var z = document.getElementById("timing");
+  var d = document.getElementById("skskDEFAULT");
+  if (x.style.display === "none") {
+	  z.style.display = "block";
+    x.style.display = "block";
+    y.style.display = "none";
+    y2.style.display = "none";
+    xx.style.display = "block";
+    yy.style.display = "none";
+    yy2.style.display = "none";
+    d.style.display = "none";
+    document.getElementById("toggleFLTbut").style.color = "black";
+    document.getElementById("toggleAlgTbut").style.color = "black";
+    document.getElementById("toggleOLTbut").style.color = "green";
   } else {
-    currentDIV.style.display = "none";
-    currentBUT.style.color = "black";
-    document.getElementById("general").style.display = "block";
-  }
-}
-function toggleDandinst() {
-  var currentDIV = document.getElementById("dandinst");
-  var currentBUT = document.getElementById("toggleDandinstBUT");
-  var chDIV = currentDIV.parentNode.children;
-  var chBUT = currentBUT.parentNode.children;
-  var i;
-  var j;
-  if (currentDIV.style.display === "none") {
-    for (i=0; i < chDIV.length; i++) {
-      chDIV[i].style.display = "none";
-    }
-    for (j=0; j < chBUT.length; j++) {
-      chBUT[j].style.color = "black";
-    }
-    currentDIV.style.display = "block";
-    currentBUT.style.color = "green";
-  } else {
-    currentDIV.style.display = "none";
-    currentBUT.style.color = "black";
-    document.getElementById("general").style.display = "block";
-  }
-}
-function toggleUsage() {
-  var currentDIV = document.getElementById("usage");
-  var currentBUT = document.getElementById("toggleUsageBUT");
-  var chDIV = currentDIV.parentNode.children;
-  var chBUT = currentBUT.parentNode.children;
-  var i;
-  var j;
-  if (currentDIV.style.display === "none") {
-    for (i=0; i < chDIV.length; i++) {
-      chDIV[i].style.display = "none";
-    }
-    for (j=0; j < chBUT.length; j++) {
-      chBUT[j].style.color = "black";
-    }
-    currentDIV.style.display = "block";
-    currentBUT.style.color = "green";
-  } else {
-    currentDIV.style.display = "none";
-    currentBUT.style.color = "black";
-    document.getElementById("general").style.display = "block";
-  }
-}
-function toggleCredits() {
-  var currentDIV = document.getElementById("credits");
-  var currentBUT = document.getElementById("toggleCreditsBUT");
-  var chDIV = currentDIV.parentNode.children;
-  var chBUT = currentBUT.parentNode.children;
-  var i;
-  var j;
-  if (currentDIV.style.display === "none") {
-    for (i=0; i < chDIV.length; i++) {
-      chDIV[i].style.display = "none";
-    }
-    for (j=0; j < chBUT.length; j++) {
-      chBUT[j].style.color = "black";
-    }
-    currentDIV.style.display = "block";
-    currentBUT.style.color = "green";
-  } else {
-    currentDIV.style.display = "none";
-    currentBUT.style.color = "black";
-    document.getElementById("general").style.display = "block";
+	  z.style.display = "none";
+    x.style.display = "none";
+    xx.style.display = "none";
+    d.style.display = "block";
+    document.getElementById("toggleOLTbut").style.color = "black";
   }
 }
 // show or hide all alg sets available
@@ -898,6 +849,22 @@ function incrMoves() {
         changescrlen();
     }
 }
+function decrMovesOL() {
+    var scrlen = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
+    if (scrlen > 1) {
+        scrlen -= 1;
+        document.getElementById("scrlenlabelOL").innerHTML = scrlen;
+        changescrlenOL();
+    }
+}
+function incrMovesOL() {
+    var scrlen = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
+    if (scrlen < 7) {
+        scrlen += 1;
+        document.getElementById("scrlenlabelOL").innerHTML = scrlen;
+        changescrlenOL();
+    }
+}
 
 // when a change of the selected algs has been made by (un-)selecting a set or a whole bunch of sets
 // change the style of the toggle buttons and save the correct combination of scrambles as auxscrl
@@ -1177,6 +1144,9 @@ function changescrlenAlg() {
     shuffle(auxscrl);
     scramblelistAlg = auxscrl;
 }
+// TODO:  changescrlenOL
+
+
 
 // grab new scrambles when button is clicked, if array is empty, get new ones; write scramble and
 // colour into corresponding labels
@@ -1232,6 +1202,9 @@ function ScramblePlusColourAlg() {
     }
     ShowScramble(scramblezumanzeigenAlg);
 }
+// TODO:  ScramblePlusColourOL
+
+
 
 // manipulates the initial order of coloured stickers, assigns swaps to moves, displays polygons
 // filled with the correct colours
