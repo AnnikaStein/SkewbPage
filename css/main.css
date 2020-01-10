@@ -227,6 +227,13 @@ aside .resp + .resp {
 		display: block;
 	}
 }
+@media screen and (min-width: 725px) {
+	#start {
+		width: 10rem;
+		height: 4rem;
+
+	}
+}
 @media screen and (max-width: 725px) {
 	.resp {
 			display: block;
