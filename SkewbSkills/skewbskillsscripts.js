@@ -78,6 +78,7 @@ function toggleOLT() {
     document.getElementById("toggleFLTbut").style.color = "black";
     document.getElementById("toggleAlgTbut").style.color = "black";
     document.getElementById("toggleOLTbut").style.color = "green";
+    changescrlenOL();
   } else {
 	  z.style.display = "none";
     x.style.display = "none";
@@ -497,6 +498,7 @@ var allAlgs = scrpiswirl.concat(scrpiwat, scrpix, scrpihu, scrpivu, scrpio, scrp
             scrphzpure, scrl4c, scrl5c);
 
 var scramblelistAlg = ["R R'"];
+var scramblelistOL = ["R R'"];
 
 function transftoWCA(scr){
     // define list carrying all stickers of the skewb and the color that is placed there initially
@@ -850,18 +852,18 @@ function incrMoves() {
     }
 }
 function decrMovesOL() {
-    var scrlen = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
-    if (scrlen > 1) {
-        scrlen -= 1;
-        document.getElementById("scrlenlabelOL").innerHTML = scrlen;
+    var scrlenOL = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
+    if (scrlenOL > 1) {
+        scrlenOL -= 1;
+        document.getElementById("scrlenlabelOL").innerHTML = scrlenOL;
         changescrlenOL();
     }
 }
 function incrMovesOL() {
-    var scrlen = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
-    if (scrlen < 7) {
-        scrlen += 1;
-        document.getElementById("scrlenlabelOL").innerHTML = scrlen;
+    var scrlenOL = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
+    if (scrlenOL < 7) {
+        scrlenOL += 1;
+        document.getElementById("scrlenlabelOL").innerHTML = scrlenOL;
         changescrlenOL();
     }
 }
@@ -1144,10 +1146,56 @@ function changescrlenAlg() {
     shuffle(auxscrl);
     scramblelistAlg = auxscrl;
 }
-// TODO:  changescrlenOL
 
+function changescrlenOL() {
+    var scrlenOL = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
 
+    // grab all L2L scrambles
+    var auxscrlOL1 = [];
+    for (var i = 0; i < allAlgs.length; i++) {
+        auxscrlOL1.push((allAlgs.slice(0))[i]);
+    }
 
+    // grab out of the possible FL scrambles corresponding to scrlenlabelOL
+    var auxscrlOL2 = [];
+    if (scrlenOL === 1) {
+        var auxscr1OL = newscramble1list.slice(0);
+        auxscrlOL2 = auxscr1OL;
+    }
+    if (scrlenOL === 2) {
+        var auxscr2OL = newscramble2list.slice(0);
+        auxscrlOL2 = auxscr2OL;
+    }
+    if (scrlenOL === 3) {
+        var auxscr3OL = newscramble3list.slice(0);
+        auxscrlOL2 = auxscr3OL;
+    }
+    if (scrlenOL === 4) {
+        var auxscr4OL = newscramble4list.slice(0);
+        auxscrlOL2 = auxscr4OL;
+    }
+    if (scrlenOL === 5) {
+        var auxscr5OL = newscramble5list.slice(0);
+        auxscrlOL2 = auxscr5OL;
+    }
+    if (scrlenOL === 6) {
+        var auxscr6OL = newscramble6list.slice(0);
+        auxscrlOL2 = auxscr6OL;
+    }
+    if (scrlenOL === 7) {
+        var auxscr7OL = newscramble7list.slice(0);
+        auxscrlOL2 = auxscr7OL;
+    }
+
+    var completeScr = [];
+    for (var k = 0; k < auxscrlOL1.length; k++) {
+      for (var l = 0; l < auxscrlOL2.length; l++) {
+          completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
+      }
+    }
+    shuffle(completeScr);
+    scramblelistOL = completeScr;
+}
 // grab new scrambles when button is clicked, if array is empty, get new ones; write scramble and
 // colour into corresponding labels
 function ScramblePlusColour() {
@@ -1202,8 +1250,23 @@ function ScramblePlusColourAlg() {
     }
     ShowScramble(scramblezumanzeigenAlg);
 }
-// TODO:  ScramblePlusColourOL
 
+function ScramblePlusColourOL() {
+  if (scramblelistOL.length == 0) {
+      changescrlenOL();
+  }
+
+  var scramblezumanzeigenOL = scramblelistOL[scramblelistOL.length - 1];
+  scramblelistOL.pop();
+  document.getElementById("scramblelabelOL").innerHTML = scramblezumanzeigenOL;
+
+  if (showscrimageOLT.checked == true) {
+      document.getElementById("scrDrawingOL").style.display = "block";
+  } else {
+      document.getElementById("scrDrawingOL").style.display = "none";
+  }
+  ShowScramble(scramblezumanzeigenOL);
+}
 
 
 // manipulates the initial order of coloured stickers, assigns swaps to moves, displays polygons
@@ -1437,6 +1500,8 @@ function ShowScramble(scramble) {
 
     if (document.getElementById("AlgT").style.display == "block") {
         var canvas = document.getElementById("scrDrawingAlg");
+    } else if (document.getElementById("OLT").style.display == "block") {
+        var canvas = document.getElementById("scrDrawingOL");
     } else {
         var canvas = document.getElementById("scrDrawing");
     }
