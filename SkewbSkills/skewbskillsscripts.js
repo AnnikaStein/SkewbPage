@@ -1193,7 +1193,6 @@ function changescrlenOL() {
           completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
       }
     }
-    console.log(completeScr);
     shuffle(completeScr);
     scramblelistOL = completeScr;
 }
