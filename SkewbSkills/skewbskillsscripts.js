@@ -856,16 +856,16 @@ function decrMovesOL() {
     if (scrlenOL > 1) {
         scrlenOL -= 1;
         document.getElementById("scrlenlabelOL").innerHTML = scrlenOL;
-        changescrlenOL();
     }
+    changescrlenOL();
 }
 function incrMovesOL() {
     var scrlenOL = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
     if (scrlenOL < 7) {
         scrlenOL += 1;
         document.getElementById("scrlenlabelOL").innerHTML = scrlenOL;
-        changescrlenOL();
     }
+    changescrlenOL();
 }
 
 // when a change of the selected algs has been made by (un-)selecting a set or a whole bunch of sets
@@ -1193,6 +1193,7 @@ function changescrlenOL() {
           completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
       }
     }
+    console.log(completeScr);
     shuffle(completeScr);
     scramblelistOL = completeScr;
 }
@@ -1258,7 +1259,7 @@ function ScramblePlusColourOL() {
 
   var scramblezumanzeigenOL = scramblelistOL[scramblelistOL.length - 1];
   scramblelistOL.pop();
-  document.getElementById("scramblelabelOL").innerHTML = scramblezumanzeigenOL;
+  document.getElementById("scramblelabelOL").innerHTML = doubleMoveRemover(scramblezumanzeigenOL + " ");
 
   if (showscrimageOLT.checked == true) {
       document.getElementById("scrDrawingOL").style.display = "block";
