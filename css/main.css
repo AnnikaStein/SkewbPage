@@ -169,6 +169,7 @@ table {
     display: block;
 	  visibility: visible;
 	  width: 100%;
+		height: 100%;
 }
 .resp2 + .resp2 {
 	  margin-top: 0.5rem;
@@ -177,6 +178,7 @@ table {
     display: inline-block;
 	visibility: visible;
 	margin-bottom: 0.5rem;
+	height: 100%;
 }
 .resp + .resp {
 		margin-left: 0.5rem;
