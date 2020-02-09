@@ -151,6 +151,9 @@ table {
   text-align: left;
   z-index: 1;
 }
+.topnav .dropdown-content a.active, .topnav.sticky .dropdown-content a.active, #myTopnav .dropdown-content a.active {
+  color: white;
+}
 
 .topnav a:hover, .topnav.sticky a:hover, .dropdown:hover .dropbtn, #myTopnav a:hover {
   background-color: #555;
@@ -279,7 +282,7 @@ aside .resp + .resp {
   .topnav.responsive .dropdown-content {
 	  position: relative;
 	  }
-  #myTopnav .dropdown {
+  #myTopnav div:last-of-type {
 	  box-shadow: 0rem 0.5rem 1rem 0rem rgba(0,0,0,0.2);
   }
   .topnav.responsive .dropdown .dropbtn {
