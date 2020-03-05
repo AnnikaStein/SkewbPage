@@ -1149,7 +1149,56 @@ function changescrlenAlg() {
 
 function changescrlenOL() {
     var scrlenOL = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
+    // grab random L2L scramble
+    var auxscrlOL1 = [allAlgs[Math.floor(Math.random() * allAlgs.length)]];
+    // grab random FL scramble
+    var auxscrlOL2 = [];
+    if (scrlenOL === 1) {
+        var auxscr1OL = [newscramble1list[Math.floor(Math.random() * newscramble1list.length)]];
+        //var auxscr1OL = newscramble1list.slice(0);
+        auxscrlOL2 = auxscr1OL;
+    }
+    if (scrlenOL === 2) {
+      var auxscr2OL = [newscramble2list[Math.floor(Math.random() * newscramble2list.length)]];
+        //var auxscr2OL = newscramble2list.slice(0);
+        auxscrlOL2 = auxscr2OL;
+    }
+    if (scrlenOL === 3) {
+        var auxscr3OL = [newscramble3list[Math.floor(Math.random() * newscramble3list.length)]];
+        //var auxscr3OL = newscramble3list.slice(0);
+        auxscrlOL2 = auxscr3OL;
+    }
+    if (scrlenOL === 4) {
+        var auxscr4OL = [newscramble4list[Math.floor(Math.random() * newscramble4list.length)]];
+        //var auxscr4OL = newscramble4list.slice(0);
+        auxscrlOL2 = auxscr4OL;
+    }
+    if (scrlenOL === 5) {
+        var auxscr5OL = [newscramble5list[Math.floor(Math.random() * newscramble5list.length)]];
+        //var auxscr5OL = newscramble5list.slice(0);
+        auxscrlOL2 = auxscr5OL;
+    }
+    if (scrlenOL === 6) {
+        var auxscr6OL = [newscramble6list[Math.floor(Math.random() * newscramble6list.length)]];
+        //var auxscr6OL = newscramble6list.slice(0);
+        auxscrlOL2 = auxscr6OL;
+    }
+    if (scrlenOL === 7) {
+        var auxscr7OL = [newscramble7list[Math.floor(Math.random() * newscramble7list.length)]];
+        //var auxscr7OL = newscramble7list.slice(0);
+        auxscrlOL2 = auxscr7OL;
+    }
+    // add both together
+    var completeScr = [];
+    completeScr.push(transftoWCA(auxscrlOL1[0]) + auxscrlOL2[0]);
+    /*
+    for (var k = 0; k < auxscrlOL1.length; k++) {
+      for (var l = 0; l < auxscrlOL2.length; l++) {
+          completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
+      }
+    }*/
 
+    /*
     // grab all L2L scrambles
     var auxscrlOL1 = [];
     for (var i = 0; i < allAlgs.length; i++) {
@@ -1193,7 +1242,7 @@ function changescrlenOL() {
           completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
       }
     }
-    shuffle(completeScr);
+    shuffle(completeScr);*/
     scramblelistOL = completeScr;
 }
 // grab new scrambles when button is clicked, if array is empty, get new ones; write scramble and
@@ -1932,4 +1981,26 @@ function checkPB() {
 			document.getElementById("pbLabel").style.visibility = "visible";
         }
     }
+}
+
+/*
+          IDEAS TO STORE DATA FOR EACH CASE, MAYBE AS OBJECTS OF A CLASS CASE
+
+          case.id, case.group, case.subGroup, case.scramble, case.mySolution,
+          case.currentPersJudgement, case.numBadJudge, case.numMediumJudge, case.numGoodJudge,
+          case.PB, case.movecount, case.tpsPB,
+*/
+
+function findNextCaseByPersonalJudgement() {
+    // find the currently selected Algs
+    // if there are cases without judgement, show them in random order until all cases have been shown once
+
+    // now that cases have been shown once or all cases have their judgement, choose randomly from the bad ones, the medium ones and the good ones,
+    // but more likely bad than medium, more likely medium than good
+
+    // e.g. roll dice, if result is 1, 3 or 5 --> use a bad case, if result is 2 or 4 use a medium case, if result is 6, use a good case
+
+}
+function applyPersonalJudgement() {
+  // assign judgement to the case that is currently selected
 }
