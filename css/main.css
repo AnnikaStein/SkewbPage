@@ -251,6 +251,10 @@ aside .resp + .resp {
 				margin-top: 0.5rem;
 				margin-left: 0;
 		}
+		#start {
+			height: 5rem;
+
+		}
 }
 
 @media screen and (max-width: 725px) {
