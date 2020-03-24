@@ -6,6 +6,18 @@ function respNav() {
     x.classList.remove("responsive");
   }
 }
+function toggleLightDark() {
+  var art = document.getElementById("art");
+  var foot = document.getElementById("foot");
+  art.classList.toggle("dark");
+  foot.classList.toggle("dark");
+  document.body.classList.toggle("dark");
+  var buts = document.getElementsByTagName("button");
+  for (i=0; i < buts.length; i++) {
+    buts[i].classList.toggle("but-Light");
+    buts[i].classList.toggle("but-Dark");
+  }
+}
 function toggleA() {
   var currentDIV = document.getElementById("A");
   var currentBUT = document.getElementById("toggleABUT");
