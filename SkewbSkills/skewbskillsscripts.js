@@ -18,14 +18,26 @@ function toggleFLT() {
     yy2.style.display = "none";
     d.style.display = "none";
     document.getElementById("toggleFLTbut").style.color = "green";
-    document.getElementById("toggleAlgTbut").style.color = "black";
-    document.getElementById("toggleOLTbut").style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      document.getElementById("toggleAlgTbut").style.color = "white";
+      document.getElementById("toggleOLTbut").style.color = "white";
+    }
+    else {
+      document.getElementById("toggleAlgTbut").style.color = "black";
+      document.getElementById("toggleOLTbut").style.color = "black";
+    }
+
   } else {
     z.style.display = "none";
 	  x.style.display = "none";
     xx.style.display = "none";
     d.style.display = "block";
-    document.getElementById("toggleFLTbut").style.color = "black";
+    if (document.body.classList.contains("dark")) {
+        document.getElementById("toggleFLTbut").style.color = "white";
+    }
+    else {
+        document.getElementById("toggleFLTbut").style.color = "black";
+    }
   }
 }
 function toggleAlgT() {
@@ -46,15 +58,26 @@ function toggleAlgT() {
     yy.style.display = "none";
     yy2.style.display = "none";
     d.style.display = "none";
-    document.getElementById("toggleFLTbut").style.color = "black";
     document.getElementById("toggleAlgTbut").style.color = "green";
-    document.getElementById("toggleOLTbut").style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      document.getElementById("toggleFLTbut").style.color = "white";
+      document.getElementById("toggleOLTbut").style.color = "white";
+    }
+    else {
+      document.getElementById("toggleFLTbut").style.color = "black";
+      document.getElementById("toggleOLTbut").style.color = "black";
+    }
   } else {
 	  z.style.display = "none";
     x.style.display = "none";
     xx.style.display = "none";
     d.style.display = "block";
-    document.getElementById("toggleAlgTbut").style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      document.getElementById("toggleAlgTbut").style.color = "white";
+    }
+    else {
+      document.getElementById("toggleAlgTbut").style.color = "black";
+    }
   }
 }
 function toggleOLT() {
@@ -75,16 +98,27 @@ function toggleOLT() {
     yy.style.display = "none";
     yy2.style.display = "none";
     d.style.display = "none";
-    document.getElementById("toggleFLTbut").style.color = "black";
-    document.getElementById("toggleAlgTbut").style.color = "black";
     document.getElementById("toggleOLTbut").style.color = "green";
+    if (document.body.classList.contains("dark")) {
+      document.getElementById("toggleFLTbut").style.color = "white";
+      document.getElementById("toggleAlgTbut").style.color = "white";
+    }
+    else {
+      document.getElementById("toggleFLTbut").style.color = "black";
+      document.getElementById("toggleAlgTbut").style.color = "black";
+    }
     changescrlenOL();
   } else {
 	  z.style.display = "none";
     x.style.display = "none";
     xx.style.display = "none";
     d.style.display = "block";
-    document.getElementById("toggleOLTbut").style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      document.getElementById("toggleOLTbut").style.color = "white";
+    }
+    else {
+      document.getElementById("toggleOLTbut").style.color = "black";
+    }
   }
 }
 // show or hide all alg sets available
@@ -95,11 +129,19 @@ function toggleSelectAlgs() {
   if (x.style.display === "none") {
     x.style.display = "block";
     xx.style.color = "green";
-    yy.style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      yy.style.color = "white";
+    } else {
+      yy.style.color = "black";
+    }
     document.getElementById("selectAlgsbyID").style.display = "none";
   } else {
     x.style.display = "none";
-    xx.style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      xx.style.color = "white";
+    } else {
+      xx.style.color = "black";
+    }
   }
 }
 // show or hide all alg sets available
@@ -110,11 +152,19 @@ function toggleSelectAlgsbyID() {
   if (x.style.display === "none") {
     x.style.display = "block";
     xx.style.color = "green";
-    yy.style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      yy.style.color = "white";
+    } else {
+      yy.style.color = "black";
+    }
     document.getElementById("selectAlgs").style.display = "none";
   } else {
     x.style.display = "none";
-    xx.style.color = "black";
+    if (document.body.classList.contains("dark")) {
+      xx.style.color = "white";
+    } else {
+      xx.style.color = "black";
+    }
   }
 }
 
@@ -961,7 +1011,11 @@ function changescrlenAlg() {
      || document.getElementById("pwat").checked == false
      || document.getElementById("px").checked == false
      || document.getElementById("pzconj").checked == false) {
+       if (document.body.classList.contains("dark")) {
+         document.getElementById("toggleAll").style.color = 'white';
+       } else {
         document.getElementById("toggleAll").style.color = 'black';
+      }
     } else {
         document.getElementById("toggleAll").style.color = 'green';
 
@@ -975,7 +1029,11 @@ function changescrlenAlg() {
      || document.getElementById("piwat").checked == false
      || document.getElementById("pix").checked == false
      || document.getElementById("pizconj").checked == false) {
+       if (document.body.classList.contains("dark")) {
+         document.getElementById("togglePi").style.color = 'white';
+       } else {
         document.getElementById("togglePi").style.color = 'black';
+      }
     } else {
         document.getElementById("togglePi").style.color = 'green';
 
@@ -989,14 +1047,22 @@ function changescrlenAlg() {
      || document.getElementById("pwat").checked == false
      || document.getElementById("px").checked == false
      || document.getElementById("pzconj").checked == false) {
+       if (document.body.classList.contains("dark")) {
+         document.getElementById("togglePeanut").style.color = 'white';
+       } else {
         document.getElementById("togglePeanut").style.color = 'black';
+      }
     } else {
         document.getElementById("togglePeanut").style.color = 'green';
 
      }
     if (document.getElementById("l4c").checked == false
      || document.getElementById("l5c").checked == false) {
+       if (document.body.classList.contains("dark")) {
+         document.getElementById("toggleL").style.color = 'white';
+       } else {
         document.getElementById("toggleL").style.color = 'black';
+      }
     } else {
         document.getElementById("toggleL").style.color = 'green';
 

@@ -26,6 +26,17 @@ article {
 	color: black;
 	}
 
+	a:active,
+	a:hover,
+	button {
+	  outline: 0;
+	}
+
+button {
+	border: none;
+	text-decoration: none;
+}
+
 .dark {
 		background-color: #333;
 		color: White;

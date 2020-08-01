@@ -17,6 +17,28 @@ function toggleLightDark() {
     buts[i].classList.toggle("but-Light");
     buts[i].classList.toggle("but-Dark");
   }
+  if (document.body.classList.contains("dark")) {
+    if (document.getElementById("toggleFLTbut").style.color !== "green") {
+      document.getElementById("toggleFLTbut").style.color = "white";
+    }
+    if (document.getElementById("toggleAlgTbut").style.color !== "green") {
+      document.getElementById("toggleAlgTbut").style.color = "white";
+    }
+    if (document.getElementById("toggleOLTbut").style.color !== "green") {
+      document.getElementById("toggleOLTbut").style.color = "white";
+    }
+  }
+  else {
+    if (document.getElementById("toggleFLTbut").style.color !== "green") {
+      document.getElementById("toggleFLTbut").style.color = "black";
+    }
+    if (document.getElementById("toggleAlgTbut").style.color !== "green") {
+      document.getElementById("toggleAlgTbut").style.color = "black";
+    }
+    if (document.getElementById("toggleOLTbut").style.color !== "green") {
+      document.getElementById("toggleOLTbut").style.color = "black";
+    }
+  }
 }
 function toggleA() {
   var currentDIV = document.getElementById("A");
