@@ -531,10 +531,14 @@ var scrphzpure = ["r' R r R' z B R r' R' r B'",
         "R r' R' r z r' R' r x R r R'",
         "r R r' R' z' r' R' r z r' R r' R'",
         "B L' r B' l' r' y r' R' r"];
-var scrl4c = ["r' l r' l' B' l' B l r'",
-        "B' r R' B x R r' R r'",
-        "R' r' R' r z2 R r' R' r b'",
-        "r' R r' R' r z2 R r' R' r B"];
+var scrl4c = ["r' R' r y x' R r y R r' R'",  //30a
+        "r' R' r z B r B r' B'",  //30b
+        "r' R r z B r B' r' z' b'",  //31
+        "b' r' R r R' z2 r' R r", // U-Perm
+        "r' l r' l' B' l' B l r'",  //32
+        "B' r R' B x R r' R r'",  //33
+        "R' r' R' r z2 R r' R' r b'",  //34a
+        "r' R r' R' r z2 R r' R' r B"];  //34b
 var scrl5c = ["R' b R r' R' r R' b R r' R' r",
         "r' R B R' r B R' z b' r R'",
         "R' r B' r' R r R' r B' r' R r",
