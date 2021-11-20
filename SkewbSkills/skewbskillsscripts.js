@@ -2053,6 +2053,46 @@ function checkPB() {
     }
 }
 
+function key(event) {
+    let key = event.key;
+
+    if ( document.getElementById("AlgT").style.display != "none" |
+     document.getElementById("OLT").style.display != "none" ) {
+        if (key == " ") {
+            event.preventDefault();
+            startStop();
+        }
+
+        if (key == "r") {
+            event.preventDefault();
+            reset();
+        }
+
+        if (key == "Enter") {
+            event.preventDefault();
+            ScramblePlusColourAlg();
+        }
+    }
+    if ( document.getElementById("FLT").style.display != "none" ) {
+        if (key == " ") {
+            event.preventDefault();
+            startStop();
+        }
+
+        if (key == "r") {
+            event.preventDefault();
+            reset();
+        }
+
+        if (key == "Enter") {
+            event.preventDefault();
+            ScramblePlusColour();
+        }
+    }
+}
+
+window.addEventListener("keydown", key, false);
+
 /*
           IDEAS TO STORE DATA FOR EACH CASE, MAYBE AS OBJECTS OF A CLASS CASE
 
