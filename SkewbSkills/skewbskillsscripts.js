@@ -1,3 +1,7 @@
+// default behaviour should be white,not transparent;
+// --> especially when starting with dark BG theme
+document.getElementById("colourlabel").style.background = 'white';
+
 // show or hide the corresponding div's
 function toggleFLT() {
   var x = document.getElementById("FLT");
@@ -8,6 +12,7 @@ function toggleFLT() {
   var yy2 = document.getElementById("additionalOLT");
   var z = document.getElementById("timing");
   var d = document.getElementById("skskDEFAULT");
+
   if (x.style.display === "none") {
 	  z.style.display = "block";
     x.style.display = "block";
@@ -2056,8 +2061,23 @@ function checkPB() {
 function key(event) {
     let key = event.key;
 
-    if ( document.getElementById("AlgT").style.display != "none" |
-     document.getElementById("OLT").style.display != "none" ) {
+    if ( document.getElementById("FLT").style.display != "none" ) {
+        if (key == " ") {
+            event.preventDefault();
+            startStop();
+        }
+
+        if (key == "r") {
+            event.preventDefault();
+            reset();
+        }
+
+        if (key == "Enter") {
+            event.preventDefault();
+            ScramblePlusColour();
+        }
+    }
+    if ( document.getElementById("AlgT").style.display != "none" ) {
         if (key == " ") {
             event.preventDefault();
             startStop();
@@ -2073,7 +2093,7 @@ function key(event) {
             ScramblePlusColourAlg();
         }
     }
-    if ( document.getElementById("FLT").style.display != "none" ) {
+    if ( document.getElementById("OLT").style.display != "none" ) {
         if (key == " ") {
             event.preventDefault();
             startStop();
@@ -2086,7 +2106,7 @@ function key(event) {
 
         if (key == "Enter") {
             event.preventDefault();
-            ScramblePlusColour();
+            ScramblePlusColourOL();
         }
     }
 }

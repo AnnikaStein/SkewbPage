@@ -134,7 +134,7 @@
       </tr>
       <br><br>
       <tr>
-        <th><input type="checkbox" id="showscrimageFLT">&nbsp;Show Scramble Image (from next scramble on)</th>
+        <th><input type="checkbox" id="showscrimageFLT" checked>&nbsp;Show Scramble Image (from next scramble on)</th>
       </tr>
     </div>
     <div id="additionalAlgT"style="display: none;" style="display: none;">
@@ -148,7 +148,7 @@
 			<button type="button" class="resp" onclick="toggleSelectAlgsbyID()" id="selAlgID">Select Algs by Case ID</button>
       <br><br>
       <tr>
-				<th><input type="checkbox" id="showscrimageAlg">&nbsp;Show Scramble Image (from next scramble on)</th>
+				<th><input type="checkbox" id="showscrimageAlg" checked>&nbsp;Show Scramble Image (from next scramble on)</th>
 			</tr>
     </div>
     <div id="additionalOLT" style="display: none;">
@@ -166,6 +166,12 @@
       <br><br>-->
       <tr>
         <th>
+          Change number of additionally applied moves after inverse L2L algorithm
+        </th>
+      </tr>
+      <br>
+      <tr>
+        <th>
           <button type="button" onclick="decrMovesOL()" style="width: 2rem;"> - </button>
         </th>
         <th>
@@ -176,7 +182,7 @@
       </tr>
       <br><br>
       <tr>
-        <th><input type="checkbox" id="showscrimageOLT">&nbsp;Show Scramble Image (from next scramble on)</th>
+        <th><input type="checkbox" id="showscrimageOLT" checked>&nbsp;Show Scramble Image (from next scramble on)</th>
       </tr>
     </div>
   </aside>
@@ -185,16 +191,23 @@
       Choose from the various practicing modes by clicking the corresponding button.<br><br>
       If you encounter any weird behaviour, please feel free to report bugs, send
       ideas or share your experiences! You can contact me through any of the methods
-      presented at the bottom of the page, where I enjoy hearing your comments!
+      presented at the bottom of the page, where I enjoy hearing your comments!<br><br>
+      Controlling the interface now also works by pressing
+      <ul>
+        <li>Enter - Generate new scramble</li>
+        <li>Space - Start / Stop timer</li>
+        <li>R - Reset timer</li>
+      </ul>
     </div>
 		<!--
 			First Layer Trainer
 		-->
 		<div id="FLT" style="display: none">
-      <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button>
-      <canvas id="scrDrawing" width="500" height="450" style="display:none"></canvas><br><br>
-			<label class="resp" id="colourlabel" style="border: 3px solid black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button><br>
 			<label class="resp" id="scramblelabel">&nbsp;</label>
+      <canvas id="scrDrawing" width="500" height="450" style="display:none"></canvas><br>
+      Use this as your starting colour:<br>
+      <label class="resp" id="colourlabel" style="border: 3px solid black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		</div>
 
 		<!--
@@ -468,12 +481,12 @@
 </article>
 </div>
 <footer id="foot">
-<a href="https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw/" class="fa fa-youtube"></a>
-<a href="https://www.instagram.com/hugacuba/" class="fa fa-instagram"></a>
-<a href="https://www.facebook.com/profile.php?id=100010717023214" class="fa fa-facebook"></a>
-<a href="https://github.com/AnnikaStein/" class="fa fa-github"></a>
-<a href="mailto:dwnhugatv@gmail.com" class="fa fa-envelope-square"></a><br>
-<a href="http://paypal.me/hugacuba">
+<a href="https://www.youtube.com/channel/UCbqOLjnPUxAvBx2GB3tTZAw/" target="_blank" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com/hugacuba/" target="_blank" class="fa fa-instagram"></a>
+<a href="https://www.facebook.com/profile.php?id=100010717023214" target="_blank" class="fa fa-facebook"></a>
+<a href="https://github.com/AnnikaStein/" target="_blank" class="fa fa-github"></a>
+<a href="mailto:dwnhugatv@gmail.com" target="_blank" class="fa fa-envelope-square"></a><br>
+<a href="http://paypal.me/hugacuba" target="_blank">
   <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Paypal Donate Button HugaCuba" width="200px" id="donateButton">
 </a>
 </footer>
