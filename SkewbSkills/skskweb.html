@@ -93,16 +93,23 @@
 <img src="../pics/skskHeader2560.png" id="mainHeader2560"></header>
 <article id="art">
   <h1>SkewbSkillsWeb</h1>
-  <h5><em>The HTML / CSS / JavaScript solution for all non-Windows users and / or those that do not want to download
-		anything!</em></h5>
+  <!--<h5><em>The HTML / CSS / JavaScript solution for all non-Windows users and / or those that do not want to download
+		anything!</em></h5>-->
   <aside id="left">
   <!--Buttons-->
-		<button type="button" class="resp2" onclick="toggleFLT()" id="toggleFLTbut">First Layer Trainer</button>
-		<button type="button" class="resp2" onclick="toggleAlgT()" id="toggleAlgTbut">L2L Alg Trainer</button>
-    <button type="button" class="resp2" onclick="toggleOLT()" id="toggleOLTbut">One-Looking Trainer</button><br>
+		<button type="button" class="resp2" onclick="toggleFLT()" id="toggleFLTbut"
+            title="This generates short scramble sequences that can be directly solved by finding a fixed length solution to the first layer.">
+            First Layer Trainer</button>
+		<button type="button" class="resp2" onclick="toggleAlgT()" id="toggleAlgTbut"
+            title="Select L2L cases either by group or id and record your best executions during the ongoing session. Useful when just starting out with memorization of algorithms or to deduce recognition patterns.">
+            L2L Alg Trainer</button>
+    <button type="button" class="resp2" onclick="toggleOLT()" id="toggleOLTbut"
+            title="Combination of the two trainers above, where a fixed length first layer leads to a random last two layers case.">
+            One-Looking Trainer</button><br>
   </aside>
   <aside id="right">
-    <button type="button" onclick="toggleLightDark()" class="resp2 but-Light"> Toggle Light / Dark Mode </button><br><br>
+    <button type="button" onclick="toggleLightDark()" class="resp2 but-Light"
+    title="Switch between default theme (bright background and black font) and dark theme with bright font."> Toggle Light / Dark Mode </button><br><br>
     <div id="additionalFLT" style="display: none;">
       <tr>
         <th>
@@ -124,12 +131,14 @@
       <br>
       <tr>
         <th>
-          <button type="button" onclick="decrMoves()" style="width: 2rem;"> - </button>
+          <button type="button" onclick="decrMoves()" style="width: 2rem;"
+          title="Decrease number of moves by 1, min: 1."> - </button>
         </th>
         <th>
           <label id="scrlenlabel"> 1 </label></th>
         <th>
-          <button type="button" onclick="incrMoves()" style="width: 2rem;"> + </button>
+          <button type="button" onclick="incrMoves()" style="width: 2rem;"
+          title="Increase number of moves by 1, max: 7."> + </button>
         </th>
       </tr>
       <br><br>
@@ -138,14 +147,20 @@
       </tr>
     </div>
     <div id="additionalAlgT"style="display: none;" style="display: none;">
-      <button type="button" class="resp" id="toggleAll" onclick="whattodowitht()">Toggle All Algs</button>
+      <button type="button" class="resp" id="toggleAll" onclick="whattodowitht()"
+      title="Checks / unchecks all cases at the same time for convenience.">Toggle All Algs</button>
 			<br>
-			<button type="button" class="resp" id="togglePi" onclick="whattodowithi()">Toggle Pi</button>
-			<button type="button" class="resp" id="togglePeanut" onclick="whattodowithu()">Toggle Peanut</button>
-			<button type="button" class="resp" id="toggleL" onclick="whattodowithl()">Toggle L4C / L5C</button>
+			<button type="button" class="resp" id="togglePi" onclick="whattodowithi()"
+      title="Checks / unchecks only pi cases.">Toggle Pi</button>
+			<button type="button" class="resp" id="togglePeanut" onclick="whattodowithu()"
+      title="Checks / unchecks only peanut cases.">Toggle Peanut</button>
+			<button type="button" class="resp" id="toggleL" onclick="whattodowithl()"
+      title="Checks / unchecks only L4C/L5C cases.">Toggle L4C / L5C</button>
 			<br>
-			<button type="button" class="resp" onclick="toggleSelectAlgs()" id="selAlgCat">Select Algs by Category</button>
-			<button type="button" class="resp" onclick="toggleSelectAlgsbyID()" id="selAlgID">Select Algs by Case ID</button>
+			<button type="button" class="resp" onclick="toggleSelectAlgs()" id="selAlgCat"
+      title="Manually check / uncheck cases based on their grouping into categories.">Select Algs by Category</button>
+			<button type="button" class="resp" onclick="toggleSelectAlgsbyID()" id="selAlgID"
+      title="Manually check / uncheck cases based on their grouping with unambiguous ids from the SkewbResources GoogleDoc.">Select Algs by Case ID</button>
       <br><br>
       <tr>
 				<th><input type="checkbox" id="showscrimageAlg" checked>&nbsp;Show Scramble Image (from next scramble on)</th>
@@ -172,12 +187,14 @@
       <br>
       <tr>
         <th>
-          <button type="button" onclick="decrMovesOL()" style="width: 2rem;"> - </button>
+          <button type="button" onclick="decrMovesOL()" style="width: 2rem;"
+          title="Decrease number of moves by 1, min: 1."> - </button>
         </th>
         <th>
           <label id="scrlenlabelOL"> 1 </label></th>
         <th>
-          <button type="button" onclick="incrMovesOL()" style="width: 2rem;"> + </button>
+          <button type="button" onclick="incrMovesOL()" style="width: 2rem;"
+          title="Increase number of moves by 1, min: 7."> + </button>
         </th>
       </tr>
       <br><br>
@@ -203,8 +220,9 @@
 			First Layer Trainer
 		-->
 		<div id="FLT" style="display: none">
-      <button type="button" class="resp" onclick="ScramblePlusColour()">Generate Scramble + Colour</button><br>
-			<label class="resp" id="scramblelabel">&nbsp;</label>
+      <button type="button" class="resp" onclick="ScramblePlusColour()"
+      title="Based on settings, generate next scramble and the colour to start the first layer with.">Generate Scramble + Colour</button><br>
+			<label class="resp" id="scramblelabel" style="font-size: 2em;">&nbsp;</label>
       <canvas id="scrDrawing" width="500" height="450" style="display:none"></canvas><br>
       Use this as your starting colour:<br>
       <label class="resp" id="colourlabel" style="border: 3px solid black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -455,17 +473,19 @@
 					<th><input type="checkbox" id="37b" name="btngroup" onclick="changescrlenAlg()">&nbsp;37b</th>
 				</tr>
 			</table>
-			<button type="button" class="resp" onclick="ScramblePlusColourAlg()">Generate L2L Case</button>
+			<button type="button" class="resp" onclick="ScramblePlusColourAlg()"
+      title="Generate next scramble to setup a L2L case from the selection.">Generate L2L Case</button>
 			<canvas id="scrDrawingAlg" width="500" height="450" style="display:none"></canvas><br><br>
-			<label class="resp" id="scramblelabelAlg">&nbsp;</label>
+			<label class="resp" id="scramblelabelAlg" style="font-size: 2em;">&nbsp;</label>
 		</div>
       <!--
                                 One-Looking Trainer
                                                                     -->
     <div id="OLT" style="display: none">
-      <button type="button" class="resp" onclick="ScramblePlusColourOL()">Generate Scramble</button>
+      <button type="button" class="resp" onclick="ScramblePlusColourOL()"
+      title="Based on settings, generate next scramble for first layer of a given length, moving into random L2L case.">Generate Scramble</button>
       <canvas id="scrDrawingOL" width="500" height="450" style="display:none"></canvas><br><br>
-			<label class="resp" id="scramblelabelOL">&nbsp;</label>
+			<label class="resp" id="scramblelabelOL" style="font-size: 2em;">&nbsp;</label>
 		</div>
 		<div id="timing" style="display: none;">
 			<h1>
@@ -473,8 +493,10 @@
 			  <span id="sec">00</span> :
 			  <span id="milisec">00</span>
 			</h1>
-			<button class="resp" onclick="startStop()" id="start">Start</button>
-			<button class="resp" onclick="reset()" id="reset" style="visibility:hidden;">Reset</button>
+			<button class="resp" onclick="startStop()" id="start"
+      title="Start / Stop the timer.">Start</button>
+			<button class="resp" onclick="reset()" id="reset" style="visibility:hidden;"
+      title="Reset the timer to 0.">Reset</button>
 			<label class="resp" id="pbLabel" style="visibility: hidden;">&nbsp;</label><br>
 		</div>
   </section>
@@ -493,5 +515,8 @@
 <!--Load JavaScript-->
 <script src="../js/script.js"></script>
 <script src="skewbskillsscripts.js"></script>
+<script type="text/javascript">
+  toggleLightDark();
+</script>
 </body>
 </html>
