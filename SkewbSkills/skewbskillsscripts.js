@@ -1374,7 +1374,9 @@ function ScramblePlusColourAlg() {
     // get random int for side color: 0, 1, 2, 3: /, y, y2, y'
     // if x2y2 do z2 instead
     var firstRotations = ["", "x ", "x2 ", "x' ", "z ", "z' ", "z2 "]
+    var firstRotationsInv = ["", " x'", " x2", " x", " z'", " z", " z2"]
     var secondRotations = ["", "y ", "y2 ", "y' "]
+    var secondRotationsInv = ["", " y'", " y2", " y"]
     var firstRotationIndex = getRandomInt(6);
     var secondRotationIndex = getRandomInt(4);
     if (firstRotationIndex == 2 && secondRotationIndex == 2) {
@@ -1383,8 +1385,11 @@ function ScramblePlusColourAlg() {
     }
     var firstRotation = firstRotations[firstRotationIndex];
     var secondRotation = secondRotations[secondRotationIndex];
+    var firstRotationInv = firstRotationsInv[firstRotationIndex];
+    var secondRotationInv =  secondRotationsInv[secondRotationIndex];
     var rotations = firstRotation + secondRotation;
-    scramblezumanzeigenAlg = rotations + scramblezumanzeigenAlg
+    var backRotations = secondRotationInv + firstRotationInv;
+    scramblezumanzeigenAlg = rotations + scramblezumanzeigenAlg + backRotations;
 
     document.getElementById("scramblelabelAlg").innerHTML = doubleMoveRemover(transftoWCA(scramblezumanzeigenAlg));
 
