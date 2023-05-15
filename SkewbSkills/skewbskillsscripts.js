@@ -1358,6 +1358,11 @@ function ScramblePlusColour() {
         document.getElementById("colourlabel").style.background = 'white';
     }
 }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  
+
 function ScramblePlusColourAlg() {
     if (scramblelistAlg.length == 0) {
         changescrlenAlg();
@@ -1365,6 +1370,27 @@ function ScramblePlusColourAlg() {
 
     var scramblezumanzeigenAlg = scramblelistAlg[scramblelistAlg.length - 1];
     scramblelistAlg.pop();
+    // get random int for top site color: 0, 1, 2, 3: /, x, x2, x' | 4, 5: z, z'
+    // get random int for side color: 0, 1, 2, 3: /, y, y2, y'
+    // if x2y2 do z2 instead
+    var firstRotations = ["", "x ", "x2 ", "x' ", "z ", "z' ", "z2 "]
+    var firstRotationsInv = ["", " x'", " x2", " x", " z'", " z", " z2"]
+    var secondRotations = ["", "y ", "y2 ", "y' "]
+    var secondRotationsInv = ["", " y'", " y2", " y"]
+    var firstRotationIndex = getRandomInt(6);
+    var secondRotationIndex = getRandomInt(4);
+    if (firstRotationIndex == 2 && secondRotationIndex == 2) {
+        firstRotationIndex = 6;
+        secondRotationIndex = 0;
+    }
+    var firstRotation = firstRotations[firstRotationIndex];
+    var secondRotation = secondRotations[secondRotationIndex];
+    var firstRotationInv = firstRotationsInv[firstRotationIndex];
+    var secondRotationInv =  secondRotationsInv[secondRotationIndex];
+    var rotations = firstRotation + secondRotation;
+    var backRotations = secondRotationInv + firstRotationInv;
+    scramblezumanzeigenAlg = rotations + scramblezumanzeigenAlg + backRotations;
+
     document.getElementById("scramblelabelAlg").innerHTML = doubleMoveRemover(transftoWCA(scramblezumanzeigenAlg));
 
     if (showscrimageAlg.checked == true) {
