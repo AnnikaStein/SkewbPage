@@ -26,6 +26,17 @@
         "tutorial",
         "video"
       ]
+    },
+    {
+      "login": "Lykos",
+      "name": "Bernhard F. Brodowsky",
+      "avatar_url": "https://avatars.githubusercontent.com/u/235985?v=4",
+      "profile": "https://github.com/Lykos",
+      "contributions": [
+        "ideas",
+        "financial",
+        "userTesting"
+      ]
     }
   ],
   "repoType": "github",
