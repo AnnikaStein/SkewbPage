@@ -6,11 +6,32 @@
   ],
   "imageSize": 100,
   "contributors": [
-
+    {
+      "login": "AnnikaStein",
+      "name": "Annika Stein",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53974095?v=4",
+      "profile": "http://annikastein.github.io",
+      "contributions": [
+        "code",
+        "test",
+        "ideas",
+        "content",
+        "doc",
+        "design",
+        "maintenance",
+        "projectManagement",
+        "promotion",
+        "research",
+        "review",
+        "tutorial",
+        "video"
+      ]
+    }
   ],
   "repoType": "github",
   "contributorsPerLine": 7,
   "repoHost": "https://github.com",
   "commitConvention": "angular",
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs"
 }
