@@ -28,6 +28,27 @@
       ]
     },
     {
+      "login": "yutu58",
+      "name": "Mattheo de Wit",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26894283?v=4",
+      "profile": "https://github.com/yutu58",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "mihlefeld",
+      "name": "Malte Ihlefeld",
+      "avatar_url": "https://avatars.githubusercontent.com/u/37628763?v=4",
+      "profile": "https://github.com/mihlefeld",
+      "contributions": [
+        "code",
+        "ideas",
+        "userTesting"
+      ]
+    },
+    {
       "login": "Lykos",
       "name": "Bernhard F. Brodowsky",
       "avatar_url": "https://avatars.githubusercontent.com/u/235985?v=4",
@@ -36,7 +57,6 @@
         "ideas",
         "financial",
         "userTesting"
-      ]
     }
   ],
   "repoType": "github",
