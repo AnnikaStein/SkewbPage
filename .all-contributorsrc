@@ -12,7 +12,19 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/53974095?v=4",
       "profile": "http://annikastein.github.io",
       "contributions": [
-        "code"
+        "code",
+        "test",
+        "ideas",
+        "content",
+        "doc",
+        "design",
+        "maintenance",
+        "projectManagement",
+        "promotion",
+        "research",
+        "review",
+        "tutorial",
+        "video"
       ]
     }
   ],
