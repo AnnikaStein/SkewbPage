@@ -1,12 +1,16 @@
 {
   "projectName": "SkewbPage",
   "projectOwner": "AnnikaStein",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "contributors": [
+
+  ],
   "repoType": "github",
+  "contributorsPerLine": 7,
   "repoHost": "https://github.com",
-  "files": ["README.md"],
-  "imageSize": 50,
-  "commit": false,
-  "contributors": [],
-  "contributorsPerLine": 8,
-  "linkToUsage": false,
+  "commitConvention": "angular",
+  "skipCi": true
 }
