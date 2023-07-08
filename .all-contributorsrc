@@ -58,6 +58,17 @@
         "financial",
         "userTesting"
       ]
+    },
+    {
+      "login": "allcontributors",
+      "name": "Elias Malomgré",
+      "avatar_url": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017MALO02/1581792874.jpeg",
+      "profile": "https://www.worldcubeassociation.org/persons/2017MALO02",
+      "contributions": [
+        "code",
+        "ideas",
+        "userTesting"
+      ]
     }
   ],
   "repoType": "github",
