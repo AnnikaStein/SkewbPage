@@ -26,6 +26,16 @@
         "tutorial",
         "video"
       ]
+    },
+    {
+      "login": "yutu58",
+      "name": "Mattheo de Wit",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26894283?v=4",
+      "profile": "https://github.com/yutu58",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
     }
   ],
   "repoType": "github",
