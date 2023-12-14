@@ -1000,6 +1000,9 @@ function changescrlen() {
 function changescrlenAlg() {
     // style of the buttons according to the
     // states of the checkboxes
+    // placeholder for scrambles
+    var auxscrl = [];
+    // default = solved Skewb, trivial scramble
     if (document.getElementById("l4c").checked == false
      || document.getElementById("l5c").checked == false
      || document.getElementById("pi3s").checked == false
@@ -1025,6 +1028,17 @@ function changescrlenAlg() {
        } else {
         document.getElementById("toggleAll").style.color = 'black';
       }
+      var buttons = document.getElementsByName("btngroup");
+      var atleastonechecked = false;
+      for (var i=0; i<buttons.length; i++) {
+          if (buttons[i].checked === true) {
+              atleastonechecked = true;
+              break;
+          }
+      }
+      if (atleastonechecked === false) {
+          auxscrl.push("R R'");
+          }
     } else {
         document.getElementById("toggleAll").style.color = 'green';
 
@@ -1078,39 +1092,6 @@ function changescrlenAlg() {
      }
 
     // get the correct scrambles
-    var auxscrl = [];
-    if (document.getElementById("l4c").checked == false
-     && document.getElementById("l5c").checked == false
-     && document.getElementById("pi3s").checked == false
-     && document.getElementById("pihu").checked == false
-     && document.getElementById("pihz").checked == false
-     && document.getElementById("pio").checked == false
-     && document.getElementById("piswirl").checked == false
-     && document.getElementById("pivu").checked == false
-     && document.getElementById("piwat").checked == false
-     && document.getElementById("pix").checked == false
-     && document.getElementById("pizconj").checked == false
-     && document.getElementById("p3s").checked == false
-     && document.getElementById("phu").checked == false
-     && document.getElementById("phzpure").checked == false
-     && document.getElementById("po").checked == false
-     && document.getElementById("pswirl").checked == false
-     && document.getElementById("pvu").checked == false
-     && document.getElementById("pwat").checked == false
-     && document.getElementById("px").checked == false
-     && document.getElementById("pzconj").checked == false) {
-        var buttons = document.getElementsByName("btngroup");
-        var atleastonechecked = false;
-        for (var i=0; i<buttons.length; i++) {
-            if (buttons[i].checked === true) {
-                atleastonechecked = true;
-                break;
-            }
-        }
-        if (atleastonechecked === false) {
-            auxscrl.push("R R'");
-            }
-    }
 
     if (document.getElementById("l4c").checked === true) {
         for (var i = 0; i < scrl4c.length; i++) {
@@ -1266,58 +1247,7 @@ function changescrlenOL() {
     // add both together
     var completeScr = [];
     completeScr.push(transftoWCA(auxscrlOL1[0]) + auxscrlOL2[0]);
-    /*
-    for (var k = 0; k < auxscrlOL1.length; k++) {
-      for (var l = 0; l < auxscrlOL2.length; l++) {
-          completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
-      }
-    }*/
 
-    /*
-    // grab all L2L scrambles
-    var auxscrlOL1 = [];
-    for (var i = 0; i < allAlgs.length; i++) {
-        auxscrlOL1.push((allAlgs.slice(0))[i]);
-    }
-
-    // grab out of the possible FL scrambles corresponding to scrlenlabelOL
-    var auxscrlOL2 = [];
-    if (scrlenOL === 1) {
-        var auxscr1OL = newscramble1list.slice(0);
-        auxscrlOL2 = auxscr1OL;
-    }
-    if (scrlenOL === 2) {
-        var auxscr2OL = newscramble2list.slice(0);
-        auxscrlOL2 = auxscr2OL;
-    }
-    if (scrlenOL === 3) {
-        var auxscr3OL = newscramble3list.slice(0);
-        auxscrlOL2 = auxscr3OL;
-    }
-    if (scrlenOL === 4) {
-        var auxscr4OL = newscramble4list.slice(0);
-        auxscrlOL2 = auxscr4OL;
-    }
-    if (scrlenOL === 5) {
-        var auxscr5OL = newscramble5list.slice(0);
-        auxscrlOL2 = auxscr5OL;
-    }
-    if (scrlenOL === 6) {
-        var auxscr6OL = newscramble6list.slice(0);
-        auxscrlOL2 = auxscr6OL;
-    }
-    if (scrlenOL === 7) {
-        var auxscr7OL = newscramble7list.slice(0);
-        auxscrlOL2 = auxscr7OL;
-    }
-
-    var completeScr = [];
-    for (var k = 0; k < auxscrlOL1.length; k++) {
-      for (var l = 0; l < auxscrlOL2.length; l++) {
-          completeScr.push(transftoWCA(auxscrlOL1[k]) + auxscrlOL2[l]);
-      }
-    }
-    shuffle(completeScr);*/
     scramblelistOL = completeScr;
 }
 // grab new scrambles when button is clicked, if array is empty, get new ones; write scramble and
@@ -1369,6 +1299,8 @@ function ScramblePlusColourAlg() {
     }
 
     var scramblezumanzeigenAlg = scramblelistAlg[scramblelistAlg.length - 1];
+    // this could be a place to read the corresponding entry in a DB to looku
+    // hints for the case (with scramblezumanzeigenAlg)
     scramblelistAlg.pop();
     // get random int for top site color: 0, 1, 2, 3: /, x, x2, x' | 4, 5: z, z'
     // get random int for side color: 0, 1, 2, 3: /, y, y2, y'
