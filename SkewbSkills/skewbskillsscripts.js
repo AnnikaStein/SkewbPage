@@ -1103,8 +1103,15 @@ function changescrlenAlg() {
         else {
             document.getElementById("toggleAll").style.color = 'black';
         }
+        var buttonsA = document.getElementsByName("btngroupA");
         var buttons = document.getElementsByName("btngroup");
         var atleastonechecked = false;
+        for (var i = 0; i < buttonsA.length; i++) {
+            if (buttonsA[i].checked === true) {
+                atleastonechecked = true;
+                break;
+            }
+        }
         for (var i = 0; i < buttons.length; i++) {
             if (buttons[i].checked === true) {
                 atleastonechecked = true;
@@ -2220,6 +2227,23 @@ function key(event) {
 }
 
 window.addEventListener("keydown", key, false);
+
+// Getting hints via a modal box
+// Get the modal
+var hintModal = document.getElementById("hintModal");
+
+// Get the button that opens the modal
+var hintBtn = document.getElementById("hintBtn");
+
+// When the user clicks the button, open the modal
+hintBtn.onclick = function() {
+    if (hintModal.style.display == "none") {
+        hintModal.style.display = "block";
+    }
+    else {
+        hintModal.style.display = "none";
+    }
+}
 
 /*
           IDEAS TO STORE DATA FOR EACH CASE, MAYBE AS OBJECTS OF A CLASS CASE
