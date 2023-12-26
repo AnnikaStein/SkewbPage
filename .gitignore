@@ -1,0 +1,8 @@
+# just mac things
+.DS_Store
+# exclude downloaded content
+*.zip
+# exclude some generated pdfs or graphics
+*.pdf
+# do not include the new private resources
+Neue*
