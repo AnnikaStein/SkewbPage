@@ -261,6 +261,11 @@ aside .resp + .resp {
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
+#hint-alg-img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* The Close Button */
 .close {
   color: white;

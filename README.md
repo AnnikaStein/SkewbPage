@@ -1,5 +1,5 @@
 [![All Contributors](https://img.shields.io/github/all-contributors/AnnikaStein/SkewbPage/master?color=ee8449&style=flat-square)](#contributors)
-
+[![pages-build-deployment](https://github.com/AnnikaStein/SkewbPage/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AnnikaStein/SkewbPage/actions/workflows/pages/pages-build-deployment)
 
 # SkewbPage
 

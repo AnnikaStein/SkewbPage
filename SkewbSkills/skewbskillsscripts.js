@@ -443,144 +443,147 @@ for (j = 0; j < newscramble6list.length; j++) {
     }
 }
 
-var scrpiswirl = ["r' R' r R' r z' r z r R'",
-        "r R r R' z R r' R' r z2 R' r' R' r",
-        "R r' b' r' R r' R r",
-        "r' B R r R' z R b' R'",
-        "R' B R' B' r' R r z R r R'",
-        "R r' R r z R r' R' z' r' R' r",
-        "r' R r R b' r R' b'",
-        "R r R' z R B r' R' r'"];
-var scrpiwat = ["B' R' r R' B' r' R' r'",
-        "R' r' R r R B R' B' R' B R B'",
-        "r R' r B r' z r R' r' R' r",
-        "R r' R' r' R B' r z R r' R",
-        "R' r B' r' R r' z R r' R r",
-        "r' R' r B' R' z R r' R' r R r'",
-        "R' r R' r' B R B' r R r'",
-        "r' R r R r' R' r B R B' R"];
-var scrpix = ["R' r R' r' z' r' R' r z R' r",
-        "R r' R r z2 R r' R' r b",
-        "R r R' r z2 r' R r z r R r",
-        "B R r' R' r z2 R r R' r",
-        "b R r' R' r z y l r' R r",
-        "B' r' R r z r' R' z R r' R'",
-        "R r R' r z2 R r' R' r B",
-        "r' R' r z r' R' B R B' r'"];
-var scrpihu = ["r B' r' R r R' r f'",
-        "R' b R r' R' r R' b",
-        "B r' R r' R' r B r'",
-        "l' B b' r B r' R' r",
-        "r R' r b' B' R r' R",
-        "r' R r' B R B' r' R",
-        "R' r R' B b r' R r'",
-        "r' B R B' z' r' R r B'"];
-var scrpivu = ["R r' R r B' R' B r' R' r",
-        "B' r' R r z B R B' r'",
-        "R B R r' R' B'",
-        "b' r' R' r y r B"];
-var scrpio = ["r' R' r z R r' R' r R r R'",
-        "R r R' z' r' R r R' r' R' r",
-        "R r' R' r' R r R' z' r' R r",
-        "r' R r R r' R' r B R' B'",
-        "B' R' r B' r' R r'",
-        "r R B' r z R r' R",
-        "r R' r B r' R B",
-        "R' r R' z' r' B R' r'"];
-var scrpizconj = ["B' r' R' r B r' R r",
-        "r B R B' r' B R' B'",
-        "B R B' r B R' B' r'",
-        "r' R' r B' r' R r B",
-        "r' R r R' z R r' R' r z' R r' R' r",
-        "r' R r R' z r' R r R' z' R r' R' r",
-        "R r' R' r z' r' R r R' z r' R r R'",
-        "R r' R' r z' R r' R' r z r' R r R'"];
-var scrpi3s = ["r R' r' z' r' R' r z r R' r' R' r",
-        "r' R r R r' z' r' R r z r R r'"];
-var scrpihz = ["R' r' R' r' B R' B' r'",
-        "r' R' r z r R r' R' z' r' R r",
-        "R r R' z' r' R' r R z R r' R'"];
-var scrpswirl = ["r R r R' z R r' R' r b",
-        "b' r' R r R' z' R r' R' r'",
-        "R r' R r B' r' R r B",
-        "R' r' R' r z R r R' r",
-        "r' R' r R' z' R r' R' r B'",
-        "R r' R r R' z' R r' R' r B'",
-        "r' R r' R' z' r' R r R",
-        "R r' R r z R r' R' r'"];
-var scrpwat = ["r R r R' z R r' R' r' z' r R'",
-        "r' R r' z' r' R' r z r' R r R",
-        "R r B R B' r' R",
-        "B R B' r' R r R",
-        "r R' B' l r' y r R r'",
-        "R' r R z B' b r' R' r",
-        "r' R r' R' r' z' r' R' r R",
-        "R r' R r R z R r R' r'"];
-var scrpx = ["R r' R' r z' R r' R' r",
-        "r' B r' R r R' r' B",
-        "r' R r R' z r' R r R'",
-        "B' r R r' R' r B' r",
-        "r' R' r z' r' R r R' B",
-        "B' R r' R' r z r' R r",
-        "B' r' R r R' z R r' R' r R",
-        "b r' R r R' z' R r' R'"];
-var scrphu = ["r' l r R r' l' r R'",
-        "r R' B R r' y' r' R' r",
-        "r R' r' B' r R r' B",
-        "B' r R' r' B r R r'",
-        "R r' z' r' R r z r R r' R",
-        "R r R' r' R' z' r' R' r z R r",
-        "R r' R' z R r y r R' B R",
-        "r R' r z r R r R' r' z' r"];
-var scrpvu = ["r' R r R' z' R r R' r'",
-        "R r' R' r z r' R' r R",
-        "r R' r' z' r' R' r z r R",
-        "R' r R z R r R' z' R' r'"];
-var scrpo = ["r' R' r R z R r R' r'",
-        "R r R' r' z' r' R' r R",
-        "r R r' R' z' R' r' R r",
-        "R' r' R r z r R r' R'",
-        "r R B R B' R' r' R'",
-        "R r R B R' B' R' r'",
-        "R' r' R' r l r' R r",
-        "r' R' r z r' R' r R r"];
-var scrpzconj = ["r' R' r z r' R r' R' r R r' R'",
-        "R r R' z' R r' R r R' r' R r",
-        "R r R' r' R r R' z' R r' R r",
-        "r' R' r R r' R' r z r' R r' R'",
-        "R r' R' r z R r' R' r z' R r' R' r",
-        "R r' R' r z' R r' R' r z R r' R' r",
-        "r' R r R' z' r' R r R' z r' R r R'",
-        "r' R r R' z r' R r R' z' r' R r R'"];
-var scrp3s = ["r' R r R' r' R r R' z R r' R' r",
-        "R r' R' r z' R r' R' r R r' R' r",
-        "r' R r R' r' R r R' z r' R r R'",
-        "r' R r R' z r' R r R' r' R r R'"];
-var scrphzpure = ["r' R r R' z B R r' R' r B'",
-        "R r' R' r z r' R' r x R r R'",
-        "r R r' R' z' r' R' r z r' R r' R'",
-        "B L' r B' l' r' y r' R' r"];
-var scrl4c = ["r' R' r y x' R r y R r' R'", //30a
-        "r' R' r z B r B r' B'", //30b
-        "r' R r z B r B' r' z' b'", //31
-        "b' r' R r R' z2 r' R r", // U-Perm
-        "r' l r' l' B' l' B l r'", //32
-        "B' r R' B x R r' R r'", //33
-        "R' r' R' r z2 R r' R' r b'", //34a
-        "r' R r' R' r z2 R r' R' r B"]; //34b
-var scrl5c = ["R' b R r' R' r R' b R r' R' r",
-        "r' R B R' r B R' z b' r R'",
-        "R' r B' r' R r R' r B' r' R r",
-        "r B' r' R r R' r z2 r' R r' R' r",
-        "R' r R B' r B R' B r' R r",
-        "r' B R r R' B r' z r' R' r"];
+// Skewb Resources: https://docs.google.com/spreadsheets/d/1j-SGlgZk20D3d2TyeiXhMWzeyTBuuix3Owgj9Q8rNbo
+// invisible char remover: https://pteo.paranoiaworks.mobi/diacriticsremover/
+var scrpiswirl = [["r' R' r R' r z' r z r R'", "1a", "H y S y' H y H,H y H y' S y H,x r' R r' R' B' r' B' r B,y' x r' R r R' z' R r' R r z R r' R' r',y x R b' r' R' r z B' r B,y x r' R r' R' r' R r R z R r R' b',R r' z' r' z r' R r' R r"],
+        ["r R r R' z R r' R' r z2 R' r' R' r", "1b", "y' S y' H y S y' S,y' S y' S y S y' H,y2 x r' B R r R' B r' B',x r' R r R r' R' r z' r' R r R' B',y x r' R r R z2 r' R r R' z' R r' R' r',y2 x R r R' r' R r R z' r' R' r B,b' r l r l' r b' l',y2 x R r' R r R r' R' r' z' r' R' r B"],
+        ["R r' b' r' R r' R r", "2a", "y2 S y' S y H y' S,y2 H y' S y S y' S,y2 x r B R' B' r R r R' r' R r,y' x b' r' R r R' z' R r' R' r R r R',y2 x b' r' R r R r' R' r z r B r' B',y' x r' B' r z r' R r b R',z' r' R' r R' r b r R',z' r' R' r R' r z' r R f'"],
+        ["r' B R r R' z R b' R'", "2b", "y H y' H y S y' H,y S y' H y H y' H,x R b R' z' R r' R' B' r,x z R' r' R' r z R r R' r z' r' R r R',y2 x B' r' R r R z R r R' r' R' r R',y x B R r' R' r' R r R' r' B' r B"],
+        ["R' B R' B' r' R r z R r R'", "1c", "S y S y' S y H,S y H y' S y H,y' x R r' R' z' r' R' r B R/R2' B' R,x y2 r' R r R b' r R' b',y x R r' R r R' B R' B' r' R' r R,y' x r B' b' r' B' r B b"],
+        ["R r' R r z R r' R' z' r' R' r", "1d", "y' H y' H y H y' S,y' H y' S y H y' H,x r' R r z R r R' z' r' R' r R',y x R' r' R' r z R r' R' r' R r R',y x' R r' R' r' B R' r B"],
+        ["r' R r R b' r R' b'", "2c", "y2 S y' H y H y' H,y2 H y' H y S y' H,x r' R r' R' z' r' R r B R B',y2 x R' r' B' r B R r B',y2 b R r' b R' r' R' r"],
+        ["R r R' z R B r' R' r'", "2d", "y H y S y' S y S,y S y S y' H y S,y' x R r' R r B R' B' r' R' r,x b r B r' B' z' r' R' b,y2 z B' b' R r' b r B r',x2 y B' r' R B' r R r R'"]];
+var scrpiwat = [["B' R' r R' B' r' R' r'", "3a", "y' S y2 H y' S y' S,x r2' R r B R r' R B,y' x R B R' B' R' r' R r R r' R' r,y x r' R r R' r' R' r R B R B' R',B' r' l r' l' B' r' b'"],
+        ["R' r' R r R B R' B' R' B R B'", "3b", "y2 S y2 H y H y S,x B' R' B' r' R' B R' r',y x R' r' R r R B R' B' R' B R B',y2 x R r R' r' R' z' r' R r z R r',y x B R' B' R B R B' R' r' R' r R,y2 x R r' R r' R r R B R' B' r,r' R' B' r' R' r z2 R' r'"],
+        ["r R' r B r' z r R' r' R' r", "4a", "y S z S y2 S,x r' R' r B R' B' R' r' R r R',y2 x r2'/r R' r B r' z r R' r' R' r"],
+        ["R r' R' r' R B' r z R r' R", "4b", "y2 H z' S y2 S,y x r' R r R B' r' R' r B R',y' x R2'/R B' r' R r B R' r' R' r,x B R B' r' R r R B R' B' R,y' x R r' R' r R r' R r B R' B' R'"],
+        ["R' r B' r' R r' z R r' R r", "3c", "y S y2 H y' H y' S,y S y S y H y2 S,x r' R' r R' z' r2'/r R' r B r' R,y' x R r' R' r R' r' R r z r R r' R',y x B R B' R' r' R' r R r' R r R',y' x R' r R r' R' r R' r' z R r' R'"],
+        ["r' R' r B' R' z R r' R' r R r'", "3d", "y2 S y2 H y S y S,H y' H y' S y2 H,x r' R r R' r R r' R' z' R' r' R r,x r R' r' R r R' z' R B r' R r,y' x r' R' r R z R r R' r' R r' R' r"],
+        ["R' r R' r' B R B' r R r'", "4c", "y H z S y2 S,y' x R r' R r z R r' R' r R r R',y2 x r' R r R B R' B' R' r' R' r R,x R r' R' r' R r R' z' r' R' r R'"],
+        ["r' R r R r' R' r B R B' R", "4d", "y2 S z' S y2 S,y x R r' R ' r' z' r' R r R z R r R' r',y' x r' R r R r' R' r B R B' R,y x R' B R' B' r' R r R' r' R' r"]];
+var scrpix = [["R' r R' r' z' r' R' r z R' r", "5a", "y2 S y S S S,x' S y2 S z2 x' H,x z' r' R z' r' R r z r R r' R,x R' r' R r R z B R' B' R r',x z' r' R' r B r' R r z R r' R r"],
+        ["R r' R r z2 R r' R' r b", "5b", "y H y' S S S,z y' S y2 S x z2 S,y x b' r' R r R' z2 r' R' r R',y2 x R r' B R' B' R' r' R r',r R' r B x r' l r l' r"],
+        ["R r R' r z2 r' R r z r R r", "6a", "y H y2 x' S y2 S,y x R r' R r z2 R r' R' r b,y x R r' R r z B R' B' R r/r2',x r2' R' r z r R r R' b r'"],
+        ["B R r' R' r z2 R r R' r", "6b", "y2 S z2 x' S y2 S,y' x R' r R' r' z' r' R' r z R' r,y2 x r' R r' R' z2 r' R r R' B'"],
+        ["b R r' R' r z y l r' R r", "5c", "y2 H y S S S,x' S y2 S z2 x' S,y' x r' R r' R' r' R r R' z' R r' R r,x r' R' r R' z2 r' R r R' b',y' x R r R' r R r' R' r z' r' R r,x b' R r' R r R' b' R' r' R' r"],
+        ["B' r' R r z r' R' z R r' R'", "5d", "y S y' S S S,z y' S y2 S y2 x' H,x r' R' r R' r' R r R' B R' B',x z R r R' z' R r z' r' R' r B,x R r' R r R r' R' r z r' R r' R',y' x B r' R r' R' r B r R r R'"],
+        ["R r R' r z2 R r' R' r B", "6c", "y S y2 z' S y2 S,y' x B' r' R r R' z2 r' R r' R',x r' R r R' z' R' r' R r R B R' B',y2 x B R B' R r' R' r R r' R r"],
+        ["r' R' r z r' R' B R B' r'", "6d", "y2 H z2 x' S y2 S,y x r B R' B' R r z' r' R r,x z R r' R' r R B R' B' R' r' R r,x z r R' B r z' r2' R r B' R',y2 r' R' r z r' R r R' r2/r' R r' R'"]];
+var scrpihu = [["r B' r' R r R' r f'", "7a", "y S S z2 x' S y2 S,y' x B r' R r' R' r B r'"],
+        ["R' b R r' R' r R' b", "7b", "y S S z' S y2 S,y2 x r' z R r' R r z r' B' r,y x b' R r' R r R' b' R"],
+        ["B r' R r' R' r B r'", "7c", "y' S S y2 z' S y2 S,y' x r B' r' R r R' r B'"],
+        ["l' B b' r B r' R' r", "7d", "S S z S y2 S,y2 x B' r z R r' R' r z' B' r,y z' r' R r B' r' b B' l"],
+        ["r R' r b' B' R r' R", "8a", "S y' S y' S,x R' r R' B b r' R r',y2 x r' R r B R' B' R' r' R' r R'"],
+        ["r' R r' B R B' r' R", "8b", "S y' H y' S,x R' r B R' B' r2' R' r,y x r' B R B' z' r' R r B',y' x B R' B r' R' r B R',y' x r' R r R z' r' R' r B r' R r"],
+        ["R' r R' B b r' R r'", "8c", "S y H y S,H y H y H,x r/r2' R' r b' B' R r' R,y2 x R r' R' z' r' R r R z R r R' r"],
+        ["r' B R B' z' r' R r B'", "8d", "S y S y S,H y S y H,y x R/ R2' B' r' R r z R' r R',x B r' R' r z B R' B' r,y2 x r' R r'/r2 B R B' r' R"]];
+var scrpivu = [["R r' R r B' R' B r' R' r", "9a", "y2 S S y' S y2 S,y' S y2 S y S S,y' x B' r' R r R B' R' r' R' r B',y' x R r R' r B r' z' r' R r R' b,y' r' R r B' R B r' R' r R',r' l r l' r' R' F r' R r,y x R r' R r z r' R r R' z' R r' R' r R"],
+        ["B' r' R r z B R B' r'", "9b", "y S S y' S y2 S,S y2 S y' S S,y' x B r' R r z R r' R' r R' r',x z r B R' B' z' r' R' r B,y2 x r' B R' B' r' R r R' r R,y2 x B' r' R r z B R B' r',x z' r' R r z R' r B r' R B,x R' r' R r' R' r x' r B r' R"],
+        ["R B R r' R' B'", "10a", "S y2 H,x z r B r B' r' B',y' z' B R r R' B' R'"],
+        ["b' r' R' r y r B", "10b", "y2 H y2 S,x B' r' B' r B r,x B' r' y' r' R r b"]];
+var scrpio = [["r' R' r z R r' R' r R r R'", "11a", "y2 H y' S y2 S,y' x R r' R' r' R r R' z' r' R r"],
+        ["R r R' z' r' R r R' r' R' r", "11b", "y S y S y2 S,x r' R r R r' R' r z R r' R'"],
+        ["R r' R' r' R r R' z' r' R r", "12a", "y2 S y2 S y S,y S y' x' S y2 S,y' x r' R' r z R r' R' r R r R',y' x r' R' r B' R z R r R' r' R,y2 x R r' R' r b r' R r R' z' R r' R'"],
+        ["r' R r R r' R' r B R' B'", "12b", "y S y2 S y' H,y2 H y x S y2 S,y x B R B' r' R r R' r' R' r,y2 x R r' z r R r R' z2 r' R r"],
+        ["B' R' r B' r' R r'", "11c", "y2 S y' S y2 S (Cancel),y x r/r2' R' r B r' R B"],
+        ["r R B' r z R r' R", "11d", "y H y S y2 S,y H y H y2 H (Cancel),y2 x R' r R' z' r' B R' r'"],
+        ["r R' r B r' R B", "12c", "y2 S y2 S y H,y H z' y' S y2 S,x B' R' r B' r' R r'"],
+        ["R' r R' z' r' B R' r'", "12d", "y S y2 S y S,y2 S x z' S y2 S,x r R B' r B R' B"]];
+var scrpizconj = [["B' r' R' r B r' R r", "13a", "H x' z S y2 S,y x r' R' r' R' z' r' R r R B',y x r' R' r B' r' R r B"],
+        ["r B R B' r' B R' B'", "13b", "y' S x' z S y2 S,y' x B R B' r B R' B' r',y' r B r' R r B' r' R'"],
+        ["B R B' r B R' B' r'", "13c", "H x' z S y2 S,x r B R B' r' B R' B'"],
+        ["r' R' r B' r' R r B", "13d", "y' S x' z S y2 S,x B' r' R' r B r' R r"],
+        ["r' R r R' z R r' R' r z' R r' R' r", "14a", "y' S y' S y H (Cancel),y' H y' S y S,x R' r' R' r R r' R' r R r' R r,x z R' r' R r B' r' R' r B R,y x r R r R' r' R r' R' r R r' R',y x r' R' z' r' R r z R r R r R' r,y' z R r R' r' R r R r' R' r R' r'"],
+        ["r' R r R' z r' R r R' z' R r' R' r", "14b", "y S y' H y H  (Cancel),y H y' H y S,y x R' B' r' R r B r' R' r R,y2 x B R' B' r' R r R' z' R r' R' r B"],
+        ["R r' R' r z' r' R r R' z r' R r R'", "14c", "y' H y H y' S (Cancel),y' S y H y' H,y2 x r R r R' r' R' r R r R' r' R r,y2 x R' r' R r' R' r R r' R r R' r,y z r' R' r R r' R' r' R r R' r R "],
+        ["R r' R' r z' R r' R' r z r' R r R'", "14d", "y H y S y' S (Cancel),y S y S y' H,y' x R r R' B R B' R r2' R r,x R r R' r R r' R' r R r' R' r',y2 x r z r R' B r' R' r' z' r,y x R r' R r R r B R B' r' R',y' z R' r' R r' R' r R r R' r' R r"]];
+var scrpi3s = [["r R' r' z' r' R' r z r R' r' R' r", "15a", "S S z S S S,x r' R r R r' z' r' R r z r R r',x R r' R' r' R B R' B' R' r' R,y2 x R r R' B' R r' R' r R r R' B'"],
+        ["r' R r R r' z' r' R r z r R r'", "15b", "z' S S z' S S S,x r R' r' z' r' R' r z r R' r' R' r,x R' r' R r z r b r' R r R' z' R r' R,y2 x b' r' R r R r' R' r b' r' R r,y2 x r B r' B' r' R r R' r B r' B'"]];
+var scrpihz = [["R' r' R' r' B R' B' r'", "16", "y' S y2 S y2 S,y S y2 S y2 H,x r B R B' r2' R r R,y2 x R' r' R' r'/r2 B R' B' r',y x B' r' R' r B'/B2 R' B' R',y' x R/R2' B R B/ B2' r' R r B"],
+        ["r' R' r z r R r' R' z' r' R r", "17a", "y S y' H y H y' S y H,y2 x r' R' r R B R' B' r' R r,x r' R' r B R B' R' r' R r"],
+        ["R r R' z' r' R' r R z R r' R'", "17b", "y S y H y' H y S y' H,y2 x R r R' r' z' r' R r z R r' R',y x R r2' R' r B r' R r' R' r B,x R r R' z' r' R' r R z R r' R',x r' R r R' z' r' R r' R' z' r' R r R,y' x r R r R' z R r' R' r b r' R r R',y x R r' R' r b' r' R r R' z' R r' R' r'"]];
+var scrpswirl = [["r R r R' z R r' R' r b", "18a", "H y H y' H y H (Cancel),S y' H x z S y2 S,y2 H y H x S y2 S (Cancel),y x b' r' R r R' z' R r' R' r',y' x R' r' R' r z' r' R r R' B'"],
+        ["b' r' R r R' z' R r' R' r'", "18b", "y' S y' S y S y' S (Cancel),y' H y S x' z S y2 S,y S y' S z' S y2 S (Cancel),x r/r2' R r R' z R r' R' r b,y2 x B R r' R' r z r' R r R"],
+        ["R r' R r B' r' R r B", "18c", "y2 S y' H y S y' H,S y' H x z S y2 S,y2 H y H x S y2 S (Cancel),x R r' R r z R r' R' r',y2 x B' R r' R' r' z' r' R' r b,y x B' r' R' r B r' R' r R'"],
+        ["R' r' R' r z R r R' r", "18d", "y H y S y' H y S,y' H y S z S y2 S,y S y' S x' z S y2 S (Cancel),x z r' R r' R' z' r' R r R,y x b r' R r z r R r R' B'"],
+        ["r' R' r R' z' R r' R' r B'", "18e", "S y S y' S y S (Cancel),y2 S y S z S y2 S,H y' S x z S y2 S,y' x B r' R r R' z R r' R r,y' x R r' R r R' z' R r' R' r B'"],
+        ["R r' R r R' z' R r' R' r B'", "18f", "y' H y' H y H y' H (Cancel),y H y' H z' S y2 S,y' S y H x' z S y2 S,y2 x B r' R r R' z R r' R' r R',x r' R' r R' z' R r' R' r B'"],
+        ["r' R r' R' z' r' R r R", "18g", "y2 H y' S y H y' S,H y' S z' S y2 S,y2 S y' S x' z S y2 S,x R' r' R' r z R r R' r,y x r' R' r' R' z' r' R r B' R,x B R r' R' r' z' r' R' r b'"],
+        ["R r' R r z R r' R' r'", "18h", "y S y H y' S y H,y H y' H x' z S y2 S,y' S y H z S y2 S,x z r R r R' z' r' R' r R',y2 x R r' R r' R' z' r' R r R B',y' x b' r' R r z r R r R' B"]];
+var scrpwat = [["r R r R' z R r' R' r' z' r R'", "19a", "y' H y S z' S y2 S,y2 S y2 S y' H y' H,S y S y S y2 S,y' x r/r2' R r R' B R' B' R' r R',x z' R r' z r2' R r R' z' R r' R' r'"],
+        ["r' R r' z' r' R' r z r' R r R", "19b", "S y' H z S y2 S,y S y2 S y S y S,y' H y' H y' S y2 S,y2 x r' R r z R r R' z R r' R' r b,y2 x b' r' R r R' z' R r' R' z' r' R' r,x R' r' R' r z' r' R r z r R' r"],
+        ["R r B R B' r' R", "19c", "y S y' S z S y2 S,y2 S y2 S y S y H,S y' H y' S y2 S,x r2' R r R' z' r' R r,y' x r' R' r B R' B' R',x r R r R' z y R' r R,x R' r B R' B' r' R'"],
+        ["B R B' r' R r R", "19d", "y2 H y' H z' S y2 S,y S y2 S y' H y' S,y' H y S y S y2 S,x R r R' z' r' R r R,y' x R' r' R' r B R' B',y x r' R' z' r' R' r B R',y' r R' z' r' R r B R"],
+        ["r R' B' l r' y r R r'", "19e", "y' S y H z' S y2 S,y2 S y2 S y' S y' S (Cancel),H y H y S y2 S,y x B' R r R' r' R r R' B' r,y2 x b r' R' r z2 r' R r b',y2 B l' B' l r' y r R r',y r R' r' y' r l' B R r',y r R' r' y' r l' B l B'"],
+        ["R' r R z B' b r' R' r", "19f", "H y' S z S y2 S,y S y2 S y H y H (Cancel),S y' S y' S y2 S,y r' R r b' B z' R' r' R,x z' B' R r R' z2 R r' R' B,y2 B' r B r' l y r' R' r"],
+        ["r' R r' R' r' z' r' R' r R", "19g", "y H y' H z S y2 S,y2 S y2 S y H y S,H y S y' S y2 S,x z R' r' R r z r R r R' r,x r' R r' R' r' z' r' R' r R  "],
+        ["R r' R r R z R r R' r'", "19h", "y2 S y S z' S y2 S,y S y2 S y' S y' H,S y H y S y2 S,x r R r' R' z' R' r' R' r R',y' x R r' R r R z R r R' r' "]];
+var scrpx = [["R r' R' r z' R r' R' r", "20a", "y S y' S (Cancel)"],
+        ["r' B r' R r R' r' B", "20b", "S y S"],
+        ["r' R r R' z r' R r R'", "20c", "y2 H y H (Cancel)"],
+        ["B' r R r' R' r B' r", "20d", "y' H y' H,y r' B r' R r R' r2 B"],
+        ["r' R' r z' r' R r R' B", "20e", "S y' H,y2 x B' R r' R' r z r' R r"],
+        ["B' R r' R' r z r' R r", "20f", "y S y H,y' x r' R' r z' r' R r R' B "],
+        ["B' r' R r R' z R r' R' r R", "20g", "y' H y S,x y b r' R r R' z' R r' R',y x R' r' R r R' z' R r' R' r B"],
+        ["b r' R r R' z' R r' R'", "20h", "y2 H y' S,x R r R' z R r' R' r b',x B' r' R r R' z R r' R' r R"]];
+var scrphu = [["r' l r R r' l' r R'", "21a", "y H y H y S (Cancel),Use Advanced,y x b' r' R r R z' r' B' r B r',y' x R r' R' z' r' R r z r R r' R' r' R r R'"],
+        ["r R' B R r' y' r' R' r", "21b", "y H y' S y' S (Cancel),y' x R r R' z R r' R' r z' r2' R r R',x z R r R r' R' r' z' r' R r B',y2 x B r' R r R z R r R' B R' B'"],
+        ["r R' r' B' r R r' B", "21c", "y2 S y' S y' H (Cancel),Use Advanced,x B' r R' r' B r R r',x B' r' B r B' z r' R' r z' r',x r' R z R r' z' r' R' r' R' r R' B"],
+        ["B' r R' r' B r R r'", "21d", "y2 S y H y H (Cancel),x r' R' r' R r R B R' B' r,x r' R' r z' r' R r R' z R' r' R' r,y x b' R r' R' r' z' r' R' r z' r' R r,y2 x r R' r' B' r R r' B"],
+        ["R r' z' r' R r z r R r' R", "21e", "y' S y' H y' H,y x R' r R' r' z' r' R' r z r R',y2 x R r R' B R B' r' R r R r',y2 x R r R' r' R' z' r' R' r B R"],
+        ["R r R' r' R' z' r' R' r z R r", "21f", "y' S y S y H,y' x R r' z' r' R r z r R r' R,x r' R' z' r' R r z R r R r' R'"],
+        ["R r' R' z R r y r R' B R", "21g", "H y S y S,x R' B' R r' y' r' R' z' R r R',x R' r' R' r B R' B' R r' R' r,y2 x r/r2' R' r z r R r R' r' z' r"],
+        ["r R' r z r R r R' r' z' r", "21h", "H y' H y' S,x r' R B R' B' R' r' R r',y2 x r' R r R' r' R' z' r' R' r B R'"]];
+var scrpvu = [["r' R r R' z' R r R' r'", "22a", "x2 r R r' R' z R r' R' r,x r R' r' R r R B R' B' r',x z2 r B R B' R' r' R' r R r'"],
+        ["R r' R' r z r' R' r R", "22b", "y' R' r' R r z' r' R r R',x B' R B R' B' R' r' R r B,x z2 B' r' R' r R B R B' R' B"],
+        ["r R' r' z' r' R' r z r R", "22c", "y' x R' r' z' r' R r z r R r',y r' R' r R z' R r' R' r,y x r R' r' z r' R' r z r R"],
+        ["R' r R z R r R' z' R' r'", "22d", "x r R z R r' R' z' R' r' R,y r R r' R' x r' R r R',z2 R r R' r' z r' R r R'"]];
+var scrpo = [["r' R' r R z R r R' r'", "23a", "y2 H y' H y2 S,x z r R r' R' z' R' r' R r"],
+        ["R r R' r' z' r' R' r R", "23b", "y S y S y2 H,x R' r' R r z r R r' R',y2 x B r R' r' B' r R r'"],
+        ["r R r' R' z' R' r' R r", "23c", "y H y H y2 S (Cancel),x r' R' r R z R r R' r'"],
+        ["R' r' R r z r R r' R'", "23d", "y2 S y' S y2 H (Cancel),x z R r R' r' z' r' R' r R"],
+        ["r R B R B' R' r' R'", "23e", "S y H y2 S,y' R r R B R' B' R' r',x z2 r R r R' r' R' z' r' R' r B"],
+        ["R r R B R' B' R' r'", "23f", "y' H y' S y2 H,y x B' r' R r R' z/z3' R' r' R r R,y x R B' r' B' r B r B R' B',y r R B R B' R' r' R',x2 r' R' z' R' r' R r z r R"],
+        ["R' r' R' r l r' R r", "23g", "H y S y2 H,y2 x b r' R r R' z' R r2'/r R' r,y' z' r' R' r l' r' R r R,y x r B' r' R r R' r z r' R' r"],
+        ["r' R' r z r' R' r R r", "23h", "y' S y' H y2 S,y r' R' r' R r z' r' R r,y x r' R r' R' z R r' R' r b'"]];
+var scrpzconj = [["r' R' r z r' R r' R' r R r' R'", "24a", "y' S y' H y S,x z R r R' r' R r R' r z' r' R r"],
+        ["R r R' z' R r' R r R' r' R r", "24b", "H y S y' H,x r' R' r R r' R' r R' z R r' R',x R B R' B' r' R' r R r' R' r R,y x B r' R r' R' r B z' r' R' r,y' x R' r' R' r' z' r' R' r R r' R' r B',x z2 R r R' r' R r R' z' R r' R' r R'"],
+        ["R r R' r' R r R' z' R r' R r", "24c", "y' H y' S y H,x r' R' r R' z R r' R' r R r' R',x r' B R' B' R B R' B' R' r' R' r',x z2 r/r2' R r z B r' B' z' r' R' r' z' r "],
+        ["r' R' r R r' R' r z r' R r' R'", "24d", "S y H y' S,y' x R r' R r R' z R r' R' r R r' R',y x R r R' r z' r' R r R' r' R r,x B r' R r R' r' R r z r R r.R"],
+        ["R r' R' r z R r' R' r z' R r' R' r", "25a", "y2 S y' S y S,y' x r' R' r' z' r' R' r R r' R' r B,y2 x r R r R' r' R r R' z' R r' R' r R,x z' r B r' R' r B r' R r' B'"],
+        ["R r' R' r z' R r' R' r z R r' R' r", "25b", "y' S y S y' S,y2 r B R' B' R B R' B' R' r' R' "],
+        ["r' R r R' z' r' R r R' z r' R r R'", "25c", "y H y H y' H,y' x b' R r R' r' R r R' r z' r' R r'"],
+        ["r' R r R' z r' R r R' z' r' R r R'", "25d", "H y' H y H,y2 x B' r' R r R' r' R r z r R r,x z r' R r R' z' b' r' R r R' z' R r' R' r'"]];
+var scrp3s = [["r' R r R' r' R r R' z R r' R' r", "26a", "S y' S S (Cancel),S y H H"],
+        ["R r' R' r z' R r' R' r R r' R' r", "26b", "y2 S S y' S (Cancel),S y' H H,x r R r' R' r B R' B' R' r' R',x B r' R r R z R r R' r' R r R"],
+        ["r' R r R' r' R r R' z r' R r R'", "26c", "y' H y H H (Cancel),y2 S S y H"],
+        ["r' R r R' z r' R r R' r' R r R'", "26d", "y2 H y S S,y H H y H (Cancel),x z' r' B R' B' R' r' R' r R r' R' r'"]];
+var scrphzpure = [["r' R r R' z B R r' R' r B'", "27", "y' S S y' S S (Cancel),y2 S S y S S,y2 B r' R r R' B' z' R r' R' r,y2 x r' R' z' r B r' R r y' r' R' r,x z' B' r' R r R' B' z2 R r' R' r b',y' x r' R F' r' R r y2 z' r' R r R',y x B r' R' r B r' R r f' R B' R',x z r B R' B' R z2 B r' R r R' B"],
+        ["R r' R' r z r' R' r x R r R'", "28", "r' R' r z Sledge z' Hedge R,S y' S S y' S y2 S (Cancel),x z' r' R' r z r' R r R' r z' r' R' r R,x z R' r' R r R' z R r' R' r z' r' R r,x z r' R r x R r' R z R r' R' r,x R r' R' x' r' R r z' r' R r R',x z r R' r' R r R' z' R r' R r B,y2 x r B R B' R r' R r R' r' R"],
+        ["r R r' R' z' r' R' r z r' R r' R'", "29a", "r' R' r Hedge z' Hedge B,y' S y' S y' H,y x r' R' r R r' R' r' z' r' R' r B,y x r R r' R' z' r' R' r z r' R r' R',x z' B' r' R r R z R r R' r' R r,x z2 R r R' r' R r R z R r R' b',x r' R' r R' B R' B' r' R' r R,x z R r R' r z' r' R r z R r R' r',x z2 R' r' R r B R B' R r' R r"],
+        ["B L' r B' l' r' y r' R' r", "29b", "y S y' H y S y' H y H (Cancel),x R r' R r' R' z' r' R r B' R,y' r' R r y' r l B r' l B',y z' r' R' r y z' r' R r b r' R' r"]];
+var scrl4c = [["r' R' r y x' R r y R r' R'", "30a", "Setup to triple sledge (Cancel),y2 x R r R' B' r' B' r B,y2 x r B r' z' b' r' R' r b,y2 x B' r' B r B R r' R',y' x R' r' R' r b z r B r' z' b' R,y' x R' r' B' r B R r R' B' "],
+        ["r' R' r z B r B r' B'", "30b", "Setup to triple sledge (Cancel),x z' r' R' r b z r B r' z' b',x B' r B r' B' z' r' R' r b',y x B r' B' z' r' R' r b R,y' x R r R' r' R r R' r2 R r R' r',x B r B' r' B' z' r' R r,y2 x r R' B' r' B' r B R,x z' r' B' r B R r R' B' "],
+        ["r' R r z B r B' r' z' b'", "31", "S S S,y2 x b' r' R' r b z r B r',y2 x b z r B r' B' z' r' R' r,x z2 B R r R' B' r' B' r,x z2 B' r' B' r B R r R',y' x R' B' r' B' r B R r,y x r B R r R' B' r' B' "],
+        ["b' r' R r R' z2 r' R r", "UPerm", "y' x S y2 S,y x b' r' R r R' z2 r' R r,y x' r' R' r z2 R r' R' r b"],
+        ["r' l r' l' B' l' B l r'", "32", "y R L' U' L U L R L' R,y x r' B r' B' z' r' R' r z B r',y x r/r2' B' r B R r R' B' r,y x R2' B' r' B' r B R r R,x r' B' r' B' r B R r R r,y r l' B' l B l r l' r,z r2' R' r b z r B r' z' b' r"],
+        ["B' r R' B x R r' R r'", "33", "S y2 H y2 S,r2'/r R' r R' b' r2'/r B' r,r/r2' R' r R' x' B' R r' B,r R' r R' y L' l L' l,x r' R r R' B' r' B' r B r,x R r' B' r B R r R' B' R'"],
+        ["R' r' R' r z2 R r' R' r b'", "34a", "Setup to U Perm,x b r' R r R' z2 r' R r R"],
+        ["r' R r' R' r z2 R r' R' r B", "34b", "Setup to U perm,x B' r' R r R' z2 r' R r R' r,y x R' r' R' r z2 R r' R' r b'"]];
+var scrl5c = [["R' b R r' R' r R' b R r' R' r", "35a", "y' S y2 S x z' S y2 S,y' x r' R r R' r R y' r' R r B' r,y' x b R r' b r R' b' r R' r',y x r' R r R' b' R r' R r R' b' R"],
+        ["r' R B R' r B R' z b' r R'", "35b", "S y2 S z' y' S y2 S,y2 x R r' R' r B r' R r' R' r B r',x r B' r' R r R' r B' r' R r R',y x B' r' R r R' r R y' r' R r B' r',x z R r' b z' R B' r' R B' R' r "],
+        ["R' r B' r' R r R' r B' r' R r", "36a", "S y2 S y S y2 S,H y2 H y H y2 H (Cancel),y' x r' R' r B r' R r' R' r B r' R,y x R' r B r' R r' R' r B r' R r',y x r' R r R' r B' r' R r R' r B'"],
+        ["r B' r' R r R' r z2 r' R r' R' r", "36b", "y' S y2 S y' S y2 S (Cancel),S y2 S x' z S y2 S,y' x B r' R r' R' r B r' R r' R' r,x B' r' R' r B r' R r z' r' R r R',y' x B r' R r R' r R y' r' R r B',y2 x r' R r R' r z2 r' R r' R' r B r'"],
+        ["R' r R B' r B R' B r' R r", "37a", "H y H y' S y S (Cancel),S y S y' H y H (Cancel),x B' r' R r R' r B' r' R r R' r,y' x r' R' r B r' R r z' r' R r R' z' r',y2 x R r' R r R' z' r2' R' r B r' R"],
+        ["r' B R r R' B r' z r' R' r", "37b", "y' S y' H y H y' S (Cancel),y' H y' H y S y' S (Cancel),x r B r' R r' R' r B r' R r' R',y2 x r' R r' R' r B r' R r' R' r B,x r' R r z' r B' R r' R' B' r"]];
 
+// these are ordered to match the resources doc
 var allAlgs = scrpiswirl.concat(scrpiwat, scrpix, scrpihu, scrpivu, scrpio, scrpizconj, scrpi3s,
     scrpihz, scrpswirl, scrpwat, scrpx, scrphu, scrpvu, scrpo, scrpzconj, scrp3s,
     scrphzpure, scrl4c, scrl5c);
 
-var scramblelistAlg = ["R R'"];
-var scramblelistOL = ["R R'"];
+var scramblelistAlg = [["R R'", "", "R R'"]];
+var scramblelistOL = [["R R'", "", "R R'"]];
 
 function transftoWCA(scr) {
     // define list carrying all stickers of the skewb and the color that is placed there initially
@@ -1075,6 +1078,7 @@ function changescrlenAlg() {
     // style of the buttons according to the
     // states of the checkboxes
     // placeholder for scrambles
+    // NEW: auxscrl shall be placeholder for scrambles AND hints
     var auxscrl = [];
     // default = solved Skewb, trivial scramble
     if (document.getElementById("l4c").checked == false ||
@@ -1119,7 +1123,11 @@ function changescrlenAlg() {
             }
         }
         if (atleastonechecked === false) {
-            auxscrl.push("R R'");
+            // NEW: push an array of scramble + hint at the same time,
+            //      hint should as well carry an image (link) and solutions
+            //      scramble, path to png, comma-separated solutions
+            auxscrl.push([["R R'", "", "R R'"]]);
+            // OLD: auxscrl.push("R R'");
         }
     }
     else {
@@ -1183,109 +1191,69 @@ function changescrlenAlg() {
     // get the correct scrambles
 
     if (document.getElementById("l4c").checked === true) {
-        for (var i = 0; i < scrl4c.length; i++) {
-            auxscrl.push((scrl4c.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrl4c);
     }
     if (document.getElementById("l5c").checked === true) {
-        for (var i = 0; i < scrl5c.length; i++) {
-            auxscrl.push((scrl5c.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrl5c);
     }
     if (document.getElementById("p3s").checked === true) {
-        for (var i = 0; i < scrp3s.length; i++) {
-            auxscrl.push((scrp3s.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrp3s);
     }
     if (document.getElementById("phu").checked === true) {
-        for (var i = 0; i < scrphu.length; i++) {
-            auxscrl.push((scrphu.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrphu);
     }
     if (document.getElementById("phzpure").checked === true) {
-        for (var i = 0; i < scrphzpure.length; i++) {
-            auxscrl.push((scrphzpure.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrphzpure);
     }
     if (document.getElementById("pi3s").checked === true) {
-        for (var i = 0; i < scrpi3s.length; i++) {
-            auxscrl.push((scrpi3s.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpi3s);
     }
     if (document.getElementById("pihu").checked === true) {
-        for (var i = 0; i < scrpihu.length; i++) {
-            auxscrl.push((scrpihu.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpihu);
     }
     if (document.getElementById("pihz").checked === true) {
-        for (var i = 0; i < scrpihz.length; i++) {
-            auxscrl.push((scrpihz.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpihz);
     }
     if (document.getElementById("pio").checked === true) {
-        for (var i = 0; i < scrpio.length; i++) {
-            auxscrl.push((scrpio.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpio);
     }
     if (document.getElementById("piswirl").checked === true) {
-        for (var i = 0; i < scrpiswirl.length; i++) {
-            auxscrl.push((scrpiswirl.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpiswirl);
     }
     if (document.getElementById("pivu").checked === true) {
-        for (var i = 0; i < scrpivu.length; i++) {
-            auxscrl.push((scrpivu.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpivu);
     }
     if (document.getElementById("piwat").checked === true) {
-        for (var i = 0; i < scrpiwat.length; i++) {
-            auxscrl.push((scrpiwat.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpiwat);
     }
     if (document.getElementById("pix").checked === true) {
-        for (var i = 0; i < scrpix.length; i++) {
-            auxscrl.push((scrpix.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpix);
     }
     if (document.getElementById("pizconj").checked === true) {
-        for (var i = 0; i < scrpizconj.length; i++) {
-            auxscrl.push((scrpizconj.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpizconj);
     }
     if (document.getElementById("po").checked === true) {
-        for (var i = 0; i < scrpo.length; i++) {
-            auxscrl.push((scrpo.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpo);
     }
     if (document.getElementById("pswirl").checked === true) {
-        for (var i = 0; i < scrpswirl.length; i++) {
-            auxscrl.push((scrpswirl.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpswirl);
     }
     if (document.getElementById("pvu").checked === true) {
-        for (var i = 0; i < scrpvu.length; i++) {
-            auxscrl.push((scrpvu.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpvu);
     }
     if (document.getElementById("pwat").checked === true) {
-        for (var i = 0; i < scrpwat.length; i++) {
-            auxscrl.push((scrpwat.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpwat);
     }
     if (document.getElementById("px").checked === true) {
-        for (var i = 0; i < scrpx.length; i++) {
-            auxscrl.push((scrpx.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpx);
     }
     if (document.getElementById("pzconj").checked === true) {
-        for (var i = 0; i < scrpzconj.length; i++) {
-            auxscrl.push((scrpzconj.slice(0))[i]);
-        }
+        auxscrl = auxscrl.concat(scrpzconj);
     }
     var group = document.getElementsByName("btngroup");
     for (var i = 0; i < group.length; i++) {
         if (group[i].checked === true) {
-            auxscrl.push((allAlgs.slice(0))[i]);
+            auxscrl.push(allAlgs[i]);
         }
     }
     shuffle(auxscrl);
@@ -1295,7 +1263,7 @@ function changescrlenAlg() {
 function changescrlenOL() {
     var scrlenOL = parseInt(document.getElementById("scrlenlabelOL").innerHTML);
     // grab random L2L scramble
-    var auxscrlOL1 = [allAlgs[Math.floor(Math.random() * allAlgs.length)]];
+    var auxscrlOL1 = [allAlgs[Math.floor(Math.random() * allAlgs.length)][0]];
     // grab random FL scramble
     var auxscrlOL2 = [];
     if (scrlenOL === 1) {
@@ -1336,7 +1304,6 @@ function changescrlenOL() {
     // add both together
     var completeScr = [];
     completeScr.push(transftoWCA(auxscrlOL1[0]) + auxscrlOL2[0]);
-
     scramblelistOL = completeScr;
 }
 // grab new scrambles when button is clicked, if array is empty, get new ones; write scramble and
@@ -1394,7 +1361,10 @@ function ScramblePlusColourAlg() {
         changescrlenAlg();
     }
 
-    var scramblezumanzeigenAlg = scramblelistAlg[scramblelistAlg.length - 1];
+    // get the whole case, with path to image and solutions
+    var caseWithHint = scramblelistAlg[scramblelistAlg.length - 1];
+    // the scramble itself is the first element per case
+    var scramblezumanzeigenAlg = caseWithHint[0];
     // this could be a place to read the corresponding entry in a DB to looku
     // hints for the case (with scramblezumanzeigenAlg)
     scramblelistAlg.pop();
@@ -1428,6 +1398,9 @@ function ScramblePlusColourAlg() {
         document.getElementById("scrDrawingAlg").style.display = "none";
     }
     ShowScramble(scramblezumanzeigenAlg);
+    // this uses the image and solutions to build the content of the hint
+    // hidden by default, can be shown if requested
+    BuildHint(caseWithHint[1],caseWithHint[2]);
 }
 
 function ScramblePlusColourOL() {
@@ -1667,7 +1640,123 @@ function ShowScramble(scramble) {
     }
     else {
         for (var i = 0; i < scrsplit.length; i++) {
-            if (scrsplit[i] == "R") {
+            if (scrsplit[i] == "x") {
+                fourswap(stickercol, 15, 25, 10, 5);
+                fourswap(stickercol, 24, 21, 22, 23);
+                fourswap(stickercol, 2, 1, 4, 3);
+                fourswap(stickercol, 17, 29, 12, 7);
+                fourswap(stickercol, 6, 16, 28, 11);
+                fourswap(stickercol, 9, 19, 27, 14);
+                fourswap(stickercol, 18, 26, 13, 8);
+            }
+            else if (scrsplit[i] == "x'") {
+                fourswap(stickercol, 5, 10, 25, 15);
+                fourswap(stickercol, 23, 22, 21, 24);
+                fourswap(stickercol, 3, 4, 1, 2);
+                fourswap(stickercol, 7, 12, 29, 17);
+                fourswap(stickercol, 11, 28, 16, 6);
+                fourswap(stickercol, 14, 27, 19, 9);
+                fourswap(stickercol, 8, 13, 26, 18);
+            }
+            else if (scrsplit[i] == "x2") {
+                fourswap(stickercol, 5, 10, 25, 15);
+                fourswap(stickercol, 23, 22, 21, 24);
+                fourswap(stickercol, 3, 4, 1, 2);
+                fourswap(stickercol, 7, 12, 29, 17);
+                fourswap(stickercol, 11, 28, 16, 6);
+                fourswap(stickercol, 14, 27, 19, 9);
+                fourswap(stickercol, 8, 13, 26, 18);
+                fourswap(stickercol, 5, 10, 25, 15);
+                fourswap(stickercol, 23, 22, 21, 24);
+                fourswap(stickercol, 3, 4, 1, 2);
+                fourswap(stickercol, 7, 12, 29, 17);
+                fourswap(stickercol, 11, 28, 16, 6);
+                fourswap(stickercol, 14, 27, 19, 9);
+                fourswap(stickercol, 8, 13, 26, 18);
+            }
+            else if (scrsplit[i] == "y") {
+                fourswap(stickercol, 19, 16, 17, 18);
+                fourswap(stickercol, 14, 13, 12, 11);
+                fourswap(stickercol, 25, 20, 5, 0);
+                fourswap(stickercol, 21, 6, 1, 26);
+                fourswap(stickercol, 29, 24, 9, 4);
+                fourswap(stickercol, 23, 8, 3, 28);
+                fourswap(stickercol, 27, 22, 7, 2);
+            }
+            else if (scrsplit[i] == "y'") {
+                fourswap(stickercol, 18, 17, 16, 19);
+                fourswap(stickercol, 11, 12, 13, 14);
+                fourswap(stickercol, 0, 5, 20, 25);
+                fourswap(stickercol, 26, 1, 6, 21);
+                fourswap(stickercol, 4, 9, 24, 29);
+                fourswap(stickercol, 28, 3, 8, 23);
+                fourswap(stickercol, 2, 7, 22, 27);
+            }
+            else if (scrsplit[i] == "y2") {
+                fourswap(stickercol, 18, 17, 16, 19);
+                fourswap(stickercol, 11, 12, 13, 14);
+                fourswap(stickercol, 0, 5, 20, 25);
+                fourswap(stickercol, 26, 1, 6, 21);
+                fourswap(stickercol, 4, 9, 24, 29);
+                fourswap(stickercol, 28, 3, 8, 23);
+                fourswap(stickercol, 2, 7, 22, 27);
+                fourswap(stickercol, 18, 17, 16, 19);
+                fourswap(stickercol, 11, 12, 13, 14);
+                fourswap(stickercol, 0, 5, 20, 25);
+                fourswap(stickercol, 26, 1, 6, 21);
+                fourswap(stickercol, 4, 9, 24, 29);
+                fourswap(stickercol, 28, 3, 8, 23);
+                fourswap(stickercol, 2, 7, 22, 27);
+            }
+            else if (scrsplit[i] == "z") {
+                fourswap(stickercol, 15, 20, 10, 0);
+                fourswap(stickercol, 9, 6, 7, 8);
+                fourswap(stickercol, 29, 28, 27, 26);
+                fourswap(stickercol, 18, 24, 11, 2);
+                fourswap(stickercol, 17, 23, 14, 1);
+                fourswap(stickercol, 19, 21, 12, 3);
+                fourswap(stickercol, 16, 22, 13, 4);
+            }
+            else if (scrsplit[i] == "z'") {
+                fourswap(stickercol, 0, 10, 20, 15);
+                fourswap(stickercol, 8, 7, 6, 9);
+                fourswap(stickercol, 26, 27, 28, 29);
+                fourswap(stickercol, 2, 11, 24, 18);
+                fourswap(stickercol, 1, 14, 23, 17);
+                fourswap(stickercol, 3, 12, 21, 19);
+                fourswap(stickercol, 4, 13, 22, 16);
+            }
+            else if (scrsplit[i] == "z2") {
+                fourswap(stickercol, 0, 10, 20, 15);
+                fourswap(stickercol, 8, 7, 6, 9);
+                fourswap(stickercol, 26, 27, 28, 29);
+                fourswap(stickercol, 2, 11, 24, 18);
+                fourswap(stickercol, 1, 14, 23, 17);
+                fourswap(stickercol, 3, 12, 21, 19);
+                fourswap(stickercol, 4, 13, 22, 16);
+                fourswap(stickercol, 0, 10, 20, 15);
+                fourswap(stickercol, 8, 7, 6, 9);
+                fourswap(stickercol, 26, 27, 28, 29);
+                fourswap(stickercol, 2, 11, 24, 18);
+                fourswap(stickercol, 1, 14, 23, 17);
+                fourswap(stickercol, 3, 12, 21, 19);
+                fourswap(stickercol, 4, 13, 22, 16);
+            }
+            else if (scrsplit[i] == "r" || scrsplit[i] == "r'2") {
+                threeswap(stickercol, 3, 7, 16);
+                threeswap(stickercol, 10, 20, 25);
+                threeswap(stickercol, 11, 21, 27);
+                threeswap(stickercol, 12, 22, 28);
+                threeswap(stickercol, 13, 23, 29);
+            }
+            else if (scrsplit[i] == "r'" || scrsplit[i] == "r2") {
+                threeswap(stickercol, 16, 7, 3);
+                threeswap(stickercol, 25, 20, 10);
+                threeswap(stickercol, 27, 21, 11);
+                threeswap(stickercol, 28, 22, 12);
+                threeswap(stickercol, 29, 23, 13);
+            }
+            else if (scrsplit[i] == "R") {
                 threeswap(stickercol, 3, 7, 16);
                 threeswap(stickercol, 10, 20, 25);
                 threeswap(stickercol, 11, 21, 27);
@@ -2020,6 +2109,22 @@ function ShowScramble(scramble) {
     ctx.translate(-10, -10);
 }
 
+function BuildHint(id, solutions) {
+    document.getElementById("hint-alg-img").src=`hints/${id}.png`;
+    document.getElementById("hint-alg-id").innerHTML = id;
+    solutionsHTML = solutions.split(",");
+
+    for (let i = 0; i < solutionsHTML.length; i++) {
+      if (i > 0) {
+        solutionsHTML[i] = solutionsHTML[i];
+      }
+      if (i < solutionsHTML.length - 1) {
+        solutionsHTML[i] = solutionsHTML[i] + "<br>";
+      }
+    }
+    solutionsHTML = solutionsHTML.join("");
+    document.getElementById("hint-alg-solutions").innerHTML = solutionsHTML;
+}
 // permute the selected entries of the list cyclically
 function threeswap(listname, i, j, k) {
     [listname[j], listname[k]] = [listname[k], listname[j]];
@@ -2235,6 +2340,9 @@ var hintModal = document.getElementById("hintModal");
 // Get the button that opens the modal
 var hintBtn = document.getElementById("hintBtn");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
 // When the user clicks the button, open the modal
 hintBtn.onclick = function() {
     if (hintModal.style.display == "none") {
@@ -2243,6 +2351,18 @@ hintBtn.onclick = function() {
     else {
         hintModal.style.display = "none";
     }
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  hintModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == hintModal) {
+    hintModal.style.display = "none";
+  }
 }
 
 /*
