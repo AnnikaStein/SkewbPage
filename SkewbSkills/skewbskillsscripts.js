@@ -922,6 +922,309 @@ function transftoWCA(scr) {
 
 }
 
+function conjugateRotationToWCA(scr) {
+    // similar to transftoWCA, but used only when we don't need rotations at the
+    // beginning, and have done a merging of the actual scramble already
+    // (use case: OLT with combination of L2L and FLT)
+    // small letter moves as in Rubiksskewb notation do not exist anymore then
+
+    var stickercol = ["o", "a", "a", "a", "a", "g", "a", "a", "a", "a", "y", "a", "a", "a", "a",
+                      "w", "a", "a", "a", "a", "r", "a", "a", "a", "a", "b", "a", "a", "a", "a"];
+
+    // define a string carrying the WCA notation scramble
+    var finalscr = "";
+
+    // split the scramble sequence into distinct moves (default split character space)
+    var scrsplit = scr.split(" ");
+
+    // store all the cycled centers (as in: all permutations of three centers) in one list
+    var allcycles = [];
+
+    // go through all elements (moves) and find out what centers they permute
+    for (var i of scrsplit) {
+        // ensure we can compare the current with previous list
+        var previous = stickercol.slice();
+
+        // for each move, store the permuted centers
+        var thecycledcolors = [];
+
+        // use a lighter version of the code in MainWindow.py, so just permute centers as they are
+        // sufficient to describe the notation (abbreviations for moves) or in other words the
+        // centers implicate unambiguous move sequence
+        if (i == "x") {
+            fourswap(stickercol, 15, 25, 10, 5);
+        }
+        else if (i == "x'") {
+            fourswap(stickercol, 5, 10, 25, 15);
+        }
+        else if (i == "x2") {
+            fourswap(stickercol, 5, 10, 25, 15);
+            fourswap(stickercol, 5, 10, 25, 15);
+        }
+        else if (i == "y") {
+            fourswap(stickercol, 25, 20, 5, 0);
+        }
+        else if (i == "y'") {
+            fourswap(stickercol, 0, 5, 20, 25);
+        }
+        else if (i == "y2") {
+            fourswap(stickercol, 0, 5, 20, 25);
+            fourswap(stickercol, 0, 5, 20, 25);
+        }
+        else if (i == "z") {
+            fourswap(stickercol, 15, 20, 10, 0);
+        }
+        else if (i == "z'") {
+            fourswap(stickercol, 0, 10, 20, 15);
+        }
+        else if (i == "z2") {
+            fourswap(stickercol, 0, 10, 20, 15);
+            fourswap(stickercol, 0, 10, 20, 15);
+        }
+        else if (i == "R" || i == "R'2") {
+            threeswap(stickercol, 20, 25, 10);
+        }
+        else if (i == "R'" || i == "R2") {
+            threeswap(stickercol, 10, 25, 20);
+        }
+        else if (i == "L" || i == "L'2") {
+            threeswap(stickercol, 0, 5, 10);
+        }
+        else if (i == "L'" || i == "L2") {
+            threeswap(stickercol, 10, 5, 0);
+        }
+        else if (i == "U" || i == "U'2") {
+            threeswap(stickercol, 0, 25, 15);
+        }
+        else if (i == "U'" || i == "U2") {
+            threeswap(stickercol, 15, 25, 0);
+        }
+        else if (i == "B" || i == "B'2") {
+            threeswap(stickercol, 0, 10, 25);
+        }
+        else if (i == "B'" || i == "B2"){
+            threeswap(stickercol, 25, 10, 0);
+        }
+
+        // "read the previous" "compare with current" only if i = real move (no rotations)
+
+        if (["x", "x'", "x2", "y", "y'", "y2", "z", "z'", "z2"].includes(i) === false) {
+            // check all centers (if they changed or not)
+            for (var j of [0, 5, 10, 15, 20, 25]) {
+                if (previous[j] == stickercol[j]) {
+                    continue;
+                }
+                else {
+                    // store the previous and the current color
+                    thecycledcolors.push([previous[j], stickercol[j]]);
+                }
+            }
+            // after all centers have been checked, store the list of the three varied centers
+            // in one bigger list
+            allcycles.push(thecycledcolors);
+
+            // whole process is repeated for all moves in the Rubiksskewb notation scramble sequence
+        }
+    }
+    // find out the WCA moves that permute the exact same 3-tuples of centers
+
+    /*# store the corresponding permuted INDICES for each move; find out, beginning
+    # with the initial state, which INDICES need to be permuted with each move
+    # for that: transform the cycle of colors to a cycle of indices (knowing where the three cycled
+    # colors were in the previous and the current stickercol list is necessary, and then you go
+    # back to their indices)*/
+
+    /*# go through all the cycled centers
+    # move them either directly (rather: their indices) with WCA moves
+    # or move the opposite indices with WCA moves*/
+
+    // find the indices on the WCA skewb, starting with the initial = solved state
+
+    var stickercolWCA = ["o", "a", "a", "a", "a", "g", "a", "a", "a", "a", "y", "a", "a", "a", "a",
+                         "w", "a", "a", "a", "a", "r", "a", "a", "a", "a", "b", "a", "a", "a", "a"];
+
+    // go through all real moves changing three centers, for in means go through all indices of allcycles, while
+    // for of means all elements in allcycles --> here, for in is correct
+    for (var o in allcycles) {
+        /*# find out the indices of the three premuted colors on the WCA-scrambled cube
+        # for this I take the two colors of the first entry (one transposition) and find the
+        # third one by checking if the remaining entrys are already covered by the variables
+        # "first" and "second" or not -> then I use the third and last color that is affected
+        # by the move*/
+        var first = stickercolWCA.indexOf(allcycles[o][0][1]);
+        var second = stickercolWCA.indexOf(allcycles[o][0][0]);
+        var third;
+        if ((stickercolWCA.indexOf(allcycles[o][1][0]) == first) || (stickercolWCA.indexOf(allcycles[o][1][0]) == second)) {
+            third = stickercolWCA.indexOf(allcycles[o][2][0]);
+        }
+        else {
+            third = stickercolWCA.indexOf(allcycles[o][1][0]);
+        }
+
+        /*# find out which WCA move corresponds to the permuted centers (or if this is not possible,
+        # I check if the permuted centers are opposite to the normally affected centers by
+        # standard WCA moves)
+
+        # in either case, print the corresponding WCA move and swap the corresponding centers
+        # to proceed with the next real move*/
+        if ([first, second, third].every(function(element, index) {
+                return element === [20, 25, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [25, 10, 20][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [10, 20, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 15, 5][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 5, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 0, 15][index];
+            })) {
+            /*([first, second, third] == [20,25,10] || [first, second, third] == [25,10,20]
+        || [first, second, third] == [10,20,25] || [first, second, third] == [0,15,5]
+        || [first, second, third] == [15,5,0] || [first, second, third] == [5,0,15])*/
+            finalscr = finalscr + "R ";
+            threeswap(stickercolWCA, 10, 20, 25);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [10, 25, 20][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 10, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [25, 20, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 15, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 5, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 0, 5][index];
+            })) {
+            /*([first, second, third] == [10,25,20]|| [first, second, third] == [20,10,25]
+        || [first, second, third] == [25,20,10] || [first, second, third] == [5,15,0]
+        || [first, second, third] == [0,5,15] || [first, second, third] == [15,0,5])*/
+            finalscr += "R' ";
+            threeswap(stickercolWCA, 25, 20, 10);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [0, 5, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 10, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [10, 0, 5][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 25, 20][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [25, 20, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 15, 25][index];
+            })) {
+            /*([first, second, third] == [0,5,10] || [first, second, third] == [5,10,0]
+        || [first, second, third] == [10,0,5] || [first, second, third] == [15,25,20]
+        || [first, second, third] == [25,20,15] || [first, second, third] == [20,15,25])*/
+            finalscr += "L ";
+            threeswap(stickercolWCA, 0, 5, 10);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [10, 5, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 10, 5][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 0, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 25, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 20, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [25, 15, 20][index];
+            })) {
+            /*([first, second, third] == [10,5,0] || [first, second, third] == [0,10,5]
+        || [first, second, third] == [5,0,10] || [first, second, third] == [20,25,15]
+        || [first, second, third] == [15,20,25] || [first, second, third] === [25,15,20])*/
+            finalscr += "L' ";
+            threeswap(stickercolWCA, 10, 5, 0);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [15, 0, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 25, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [25, 15, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 20, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 10, 5][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [10, 5, 20][index];
+            })) {
+            /*([first, second, third] == [15,0,25] || [first, second, third] == [0,25,15]
+        || [first, second, third] == [25,15,0] || [first, second, third] == [5,20,10]
+        || [first, second, third] == [20,10,5] || [first, second, third] == [10,5,20])*/
+            finalscr += "U ";
+            threeswap(stickercolWCA, 0, 25, 15);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [25, 0, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 25, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 15, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [10, 20, 5][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 10, 20][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 5, 10][index];
+            })) {
+            /*([first, second, third] == [25,0,15] || [first, second, third] == [15,25,0]
+        || [first, second, third] == [0,15,25] || [first, second, third] == [10,20,5]
+        || [first, second, third] == [5,10,20] || [first, second, third] == [20,5,10])*/
+            finalscr += "U' ";
+            threeswap(stickercolWCA, 15, 25, 0);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [25, 0, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 10, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [10, 25, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 20, 5][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 5, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 15, 20][index];
+            })) {
+            /*([first, second, third] == [25,0,10] || [first, second, third] == [0,10,25]
+        || [first, second, third] == [10,25,0] || [first, second, third] == [15,20,5]
+        || [first, second, third] == [20,5,15] || [first, second, third] == [5,15,20])*/
+            finalscr += "B ";
+            threeswap(stickercolWCA, 0, 10, 25);
+        }
+        else if ([first, second, third].every(function(element, index) {
+                return element === [10, 0, 25][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [25, 10, 0][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [0, 25, 10][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [5, 20, 15][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [15, 5, 20][index];
+            }) || [first, second, third].every(function(element, index) {
+                return element === [20, 15, 5][index];
+            })) {
+            /*([first, second, third] == [10,0,25] || [first, second, third] == [25,10,0]
+        || [first, second, third] == [0,25,10] || [first, second, third] == [5,20,15]
+        || [first, second, third] == [15,5,20] || [first, second, third] == [20,15,5])*/
+            finalscr += "B' ";
+            threeswap(stickercolWCA, 25, 10, 0);
+        }
+    }
+
+    return (finalscr);
+
+}
+
 function doubleMoveRemover(scramble) {
     var newScr = [];
     var newScrString = "";
@@ -1430,8 +1733,8 @@ function ScramblePlusColourOL() {
     var rotations = firstRotation + secondRotation;
     var backRotations = secondRotationInv + firstRotationInv;
     scramblezumanzeigenOL = rotations + scramblezumanzeigenOL + backRotations;
-
-    document.getElementById("scramblelabelOL").innerHTML = doubleMoveRemover(scramblezumanzeigenOL + " ");
+    scramblezumanzeigenOL = doubleMoveRemover(conjugateRotationToWCA(scramblezumanzeigenOL.trim()));
+    document.getElementById("scramblelabelOL").innerHTML = scramblezumanzeigenOL + " ";
 
     if (showscrimageOLT.checked == true) {
         document.getElementById("scrDrawingOL").style.display = "block";
@@ -1623,7 +1926,7 @@ function ShowScramble(scramble) {
             threeswap(stickercol, 4, 14, 28);
             threeswap(stickercol, 8, 22, 19);
         }
-        else {
+        else if (scrsplit[i] == "B'"){
             threeswap(stickercol, 25, 10, 0);
             threeswap(stickercol, 26, 12, 2);
             threeswap(stickercol, 27, 13, 3);
