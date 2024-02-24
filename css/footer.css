@@ -125,13 +125,14 @@ footer .fa-instagram {
   background: #444444;
   color: white;
 }
+footer #donateButton {
+    margin-top: 0.5rem;
+    height: 4rem;
+}
 @media screen and (max-width: 725px) {
 	footer .fa {
 		padding: 0.5rem;
 		font-size: 2rem;
 		width: 2rem;
-	}
-	footer #donateButton {
-		height: 4rem;
 	}
 }
