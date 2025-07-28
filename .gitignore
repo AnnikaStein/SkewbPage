@@ -6,3 +6,5 @@
 *.pdf
 # do not include the new private resources
 Neue*
+# do not include ipynb checkpoints
+*.ipynb_check*
